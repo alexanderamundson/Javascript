@@ -1,0 +1,1 @@
+//This is a comment\r\n/*This\r\n  is\r\n  a \r\n  multi-line\r\n  comment\r\n*/"
