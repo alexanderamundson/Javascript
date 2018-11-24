@@ -22,4 +22,18 @@ function findLongestWordLength(str) {
   return longestWord[0].length;
 }
 
+//Method 3: Reduce function
+function findLongestWordLength(str) {
+ var arr = str.split(' ');
+
+  function getLongest(longest, current) {
+    if (current.length > longest){
+      return current.length;
+    }
+      return longest;
+  }
+  var word = arr.reduce(getLongest, 0);
+  return word;
+}
+
 
