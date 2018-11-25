@@ -23,6 +23,15 @@ function titleCase(str) {
   return newString.join(' ');
 }
 
+//method 3: map method and string.replace()
+function titleCase(str) {
+  var data = str.toLowerCase().split(' ');
+  var newString = data.map(function(word) {
+    return word.replace(word.charAt(0), word.charAt(0).toUpperCase());
+  });
+  return newString.join(' ');
+}
+
 
 
 
