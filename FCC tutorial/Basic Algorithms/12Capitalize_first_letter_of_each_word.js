@@ -1,4 +1,5 @@
-/*Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+/*Return the provided string with the first letter of each
+word capitalized. Make sure the rest of the word is in lower case.
 */
 
 //method 1: for loop
