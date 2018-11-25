@@ -15,6 +15,13 @@ titleCase("I'm a little tea pot");//returns " I'm A Little Tea Pot"
 titleCase("sHoRt AnD sToUt");//returns "Short And Stout"
 
 //method 2: map method
+function titleCase(str) {
+  str = str.toLowerCase().split(' ');
+  var newString = str.map(function(item, index, arr) {
+    return item.charAt(0).toUpperCase() + item.slice(1);
+  });
+  return newString.join(' ');
+}
 
 
 
