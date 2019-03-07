@@ -54,8 +54,14 @@ function lookUpProfile(name, prop){
     }
   } 
   return "No such contact";
-// Only change code above this line
+
 }
 
-// Change these values to test your function
+
 lookUpProfile("Akira", "likes");
+lookUpProfile("Kristian", "lastName");//should return "Vos"
+lookUpProfile("Sherlock", "likes");//should return ["Intriguing Cases", "Violin"]
+lookUpProfile("Harry","likes");//should return an array
+lookUpProfile("Bob", "number");// should return "No such contact"
+lookUpProfile("Bob", "potato");// should return "No such contact"
+lookUpProfile("Akira", "address");//should return "No such property"
