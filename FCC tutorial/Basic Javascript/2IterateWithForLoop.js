@@ -30,3 +30,24 @@ var total = 0;
 for (var i = 0; i < myArr.length; i++) {
   total += thisArr[i];
 }
+
+
+//Write function multiplyAll so that it multiplies the product 
+//variable by each number in the sub-arrays of function parameter arr
+
+function multiplyAll(arr) {
+  var product = 1;
+  
+  for (var r =0; r < arr.length; r++) {
+    for (var c=0; c < arr[r].length; c++) {
+      product *= arr[r][c];
+    }
+  }
+  
+  return product;
+}
+
+
+multiplyAll([[1],[2],[3]]);//returns 6
+multiplyAll([[1,2],[3,4],[5,6,7]]);//returns 5040
+multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])//returns 54
