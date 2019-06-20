@@ -24,3 +24,13 @@ const reportingForDuty = (rank, lastName) => {
 }
 
 console.log(reportingForDuty('Private', 'James'));
+
+
+
+/*write a function, rollTheDice() to simulate two dice being rolled that returns the sum of the values of the two dice*/
+const rollTheDice = () => {
+    let die1 = Math.floor(Math.random() * 6 + 1)
+    let die2 = Math.floor(Math.random() * 6 + 1)
+    return die1 + die2
+}
+console.log(rollTheDice());
