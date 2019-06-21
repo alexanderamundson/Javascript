@@ -1,6 +1,6 @@
 //Code Challenge 1
 
-/*Write a function canIVote() that takes in a number, representing the person’s age, and returns the boolean true if they are 18 years old or older, and the boolean false if they are not
+/*Write a function canIVote() that takes in a number, representing the personâ€™s age, and returns the boolean true if they are 18 years old or older, and the boolean false if they are not
 */
 function canIVote(age) {
 	return age >= 18 ? true : false;  
@@ -9,7 +9,7 @@ function canIVote(age) {
  console.log(canIVote(11)) //prints true
 
 
-/*Write a function, agreeOrDisagree(), that takes in two strings, and returns ‘You agree!’ if the two strings are the same and ‘You disagree!’ if the two strings are different.
+/*Write a function, agreeOrDisagree(), that takes in two strings, and returns â€˜You agree!â€™ if the two strings are the same and â€˜You disagree!â€™ if the two strings are different.
 */
 function agreeOrDisagree(string1, string2) {
   return string1 === string2 ? 'You agree!' : 'You disagree!';
@@ -17,7 +17,7 @@ function agreeOrDisagree(string1, string2) {
  console.log(agreeOrDisagree("yep", "yep")) //prints 'You agree!'
 
 
-/*Write a function, reportingForDuty(), that has two string parameters, rank and lastName, and returns a string in the following format: ‘rank lastName reporting for duty!’
+/*Write a function, reportingForDuty(), that has two string parameters, rank and lastName, and returns a string in the following format: â€˜rank lastName reporting for duty!â€™
 */
 const reportingForDuty = (rank, lastName) => {
   return `${rank} ${lastName} reporting for duty!`;
@@ -42,5 +42,5 @@ function truthyOrFalsy(value){
 }
 console.log(truthyOrFalsy(0.0));//returns false
 console.log(truthyOrFalsy(NaN));//returns false
-console.log(truthyOrFalsy(''"));//returns false
+console.log(truthyOrFalsy(''));//returns false
 console.log(truthyOrFalsy(false));//returns false
