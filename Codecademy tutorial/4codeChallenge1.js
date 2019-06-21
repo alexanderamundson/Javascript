@@ -22,7 +22,6 @@ function agreeOrDisagree(string1, string2) {
 const reportingForDuty = (rank, lastName) => {
   return `${rank} ${lastName} reporting for duty!`;
 }
-
 console.log(reportingForDuty('Private', 'James'));
 
 
@@ -34,3 +33,14 @@ const rollTheDice = () => {
     return die1 + die2
 }
 console.log(rollTheDice());
+
+
+/*Write a function, truthyOrFalsy(), that takes in any value and returns true if that value is truthy and false if that value is falsy.
+*/
+function truthyOrFalsy(value){
+  return value ? true : false;
+}
+console.log(truthyOrFalsy(0.0));//returns false
+console.log(truthyOrFalsy(NaN));//returns false
+console.log(truthyOrFalsy(''"));//returns false
+console.log(truthyOrFalsy(false));//returns false
