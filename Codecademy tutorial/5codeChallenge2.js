@@ -35,3 +35,17 @@ const reverseArrayAlternativeTwo = function(array) {
   return array;
 }
 console.log(reverseArrayAlternativeTwo(sentence));
+
+
+////////////////////////////
+Exercise 2-A
+/*Write a function, convertToBaby(), that takes in an array as an argument and, using a loop, returns a new array with each string in the array prepended with 'baby '*/
+const convertToBaby = function(array) {
+  var newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    newArray.push('baby ' + array[i]);
+  }
+  return newArray;
+};
+const animals = ['panda', 'turtle', 'giraffe', 'hippo', 'sloth', 'human'];
+console.log(convertToBaby(animals));/* Should return ['baby panda', 'baby turtle', 'baby giraffe', 'baby hippo', 'baby sloth', 'baby human']; */
