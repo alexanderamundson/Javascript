@@ -68,3 +68,27 @@ const smallestPowerOfTwo = arr => {
 }
 console.log(smallestPowerOfTwo(numbers)) 
 // Should print the returned array [ 8, 4, 16, 32 ] 
+
+/////////////////////
+//Exercise 4-A
+
+//Write a function declineEverything() that takes in an array of strings and, 
+//using .forEach(), loops through each element in the array and calls 
+//politelyDecline() with each of them
+const veggies = ['broccoli', 'spinach', 'cauliflower', 'broccoflower'];
+
+const politelyDecline = (veg) => {
+      console.log('No ' + veg + ' please. I will have pizza with extra cheese.');
+}
+
+const declineEverything = function(stringsArray) {
+  stringsArray.forEach(politelyDecline);
+};
+/*Write a function acceptEverything() that takes in an array of strings and loops
+ through each element in the array and grudgingly accepts each of them, by logging
+ to the console in the following format: 'Ok, I guess I will eat some [element].'*/
+const acceptEverything = function(stringArray) {
+  stringArray.forEach( function(element) {
+    console.log(`Ok, I guess I will eat some ${element}.`);
+  });
+};
