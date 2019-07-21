@@ -144,3 +144,22 @@ const myStuff = [ 'rules', 'fruit-by-the-foot', 'wedgies', 'sweaters', 'skateboa
 
 console.log(justCoolStuff(myStuff, coolStuff))
 // Should print [ 'fruit-by-the-foot', 'skateboards', 'my room' ]
+
+//////////////////
+//Exercise 8
+
+//Write a function isTheDinnerVegan that returns whether or not all the food 
+//objects in the dinner array are vegan. A food is vegan if its source is 'plant'
+const isTheDinnerVegan = (foodArray) => {
+  for (var i =0; i < foodArray.length; i++) {
+    if (foodArray[i].source != 'plant') {
+      return false;
+    }
+  }
+  return true;
+};
+
+const dinner = [{name: 'hamburger', source: 'meat'}, {name: 'cheese', source: 'dairy'}, {name: 'ketchup', source:'plant'}, {name: 'bun', source: 'plant'}, {name: 'dessert twinkies', source:'unknown'}];
+
+console.log(isTheDinnerVegan(dinner))
+
