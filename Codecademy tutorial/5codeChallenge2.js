@@ -38,7 +38,7 @@ console.log(reverseArrayAlternativeTwo(sentence));
 
 
 ////////////////////////////
-Exercise 2-A
+//Exercise 2-A
 /*Write a function, convertToBaby(), that takes in an array as an argument and, using a loop, returns a new array with each string in the array prepended with 'baby '*/
 const convertToBaby = function(array) {
   var newArray = [];
@@ -49,3 +49,22 @@ const convertToBaby = function(array) {
 };
 const animals = ['panda', 'turtle', 'giraffe', 'hippo', 'sloth', 'human'];
 console.log(convertToBaby(animals));/* Should return ['baby panda', 'baby turtle', 'baby giraffe', 'baby hippo', 'baby sloth', 'baby human']; */
+
+////////////////////
+//Exercise 3-A
+/*Write a function which takes in an array of integers an returns an array that shows the smallest power of two that is larger than each number in the input array*/
+const numbers = [5, 3, 9, 30];
+const smallestPowerOfTwo = arr => {
+      let results = [];
+      for (let i = 0; i < arr.length; i++) {
+            number = arr[i];
+           var j = 1;
+            while (j < number) {
+                  j = j * 2;
+            }
+            results.push(j);
+      }
+      return results
+}
+console.log(smallestPowerOfTwo(numbers)) 
+// Should print the returned array [ 8, 4, 16, 32 ] 
