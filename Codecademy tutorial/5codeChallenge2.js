@@ -175,3 +175,30 @@ function isVegan(element, index, array) {
 const dinner = [{name: 'hamburger', source: 'meat'}, {name: 'cheese', source: 'dairy'}, {name: 'ketchup', source:'plant'}, {name: 'bun', source: 'plant'}, {name: 'dessert twinkies', source:'unknown'}];
 
 console.log(isTheDinnerVegan(dinner))
+
+
+////////////////////
+//Exercise 9
+
+/*Write a function sortSpeciesByTeeth() that takes in an array of species objects in the format:
+{speciesName: 'shark', numTeeth: 50 }
+and sorts the array in ascending order based on the average number of teeth that species possesses (numTeeth)
+*/
+const speciesArray = [ {speciesName:'shark', numTeeth:50}, {speciesName:'dog', numTeeth:42}, {speciesName:'alligator', numTeeth:80}, {speciesName:'human', numTeeth:32}];
+
+const compareTeeth = function(elem1, elem2) {
+  return elem1.numTeeth - elem2.numTeeth;
+};
+
+const sortSpeciesByTeeth = function(array) {
+  array.sort(compareTeeth);
+  return array;
+};
+
+console.log(sortSpeciesByTeeth(speciesArray))
+
+// Should print [ { speciesName: 'human', numTeeth: 32 },
+//  { speciesName: 'dog', numTeeth: 42 },
+//  { speciesName: 'shark', numTeeth: 50 },
+//  { speciesName: 'alligator', numTeeth: 80 } ]
+
