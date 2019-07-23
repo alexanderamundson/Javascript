@@ -66,9 +66,9 @@ menu.addDishToCourse('appetizers', 'Spinach Salad', 2.25);
 menu.addDishToCourse('mains', 'Beef Stew', 4.25);
 menu.addDishToCourse('mains', 'Spaghetti', 3.45);
 menu.addDishToCourse('mains', 'Turkey Burger', 4.00);
-menu.addDishToCourse('desserts', 'Green Smoothie', 2.80);
+menu.addDishToCourse('desserts', 'Pecan Pie', 2.80);
 menu.addDishToCourse('desserts', 'Watermelon', 1.25);
-menu.addDishToCourse('desserts', 'Mamey Sapote', 3.00);
+menu.addDishToCourse('desserts', 'Cheesecake', 3.00);
 
 
 //Display a randomly selected meal and the total price
