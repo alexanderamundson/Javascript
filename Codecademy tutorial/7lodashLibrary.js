@@ -58,6 +58,19 @@ const _ = {
     }
     return invertedObject;
   },
+  
+  //Returns the first key in the input object for which running the 
+  //'predicate' function returns true. Returns undefined if 'predicate
+  //never returns true
+  findKey(object, predicate) {
+    for (let key in object){
+      if (predicate(object[key]) === true) {
+        return key;
+      }
+    } return undefined;
+  }
+
+  
 };
 
 /*** .clamp()
