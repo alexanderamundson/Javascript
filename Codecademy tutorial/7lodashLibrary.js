@@ -1,6 +1,6 @@
 const _ = {
-  //Returns whether the input 'number' is in the range 
-  //between 'lower' and 'upper'
+  
+  /***.clamp() modifies the provided number to be within the two provided bounds***/
   clamp(number, lower, upper) {
     let lowerClampedValue = Math.max(number, lower);
     let clampedValue = Math.min(lowerClampedValue, upper);
@@ -43,8 +43,10 @@ const _ = {
   }
 };
 
-
-
+/*** .clamp()
+If the provided number is smaller than the lower bound, it will return the lower bound as the final number.
+If the number is larger than the upper bound, it will return the upper bound as the final number
+If the number is already within the two bounds, it will return the number as the final number***/
 
 // Do not write or modify code below this line.
 module.exports = _;
