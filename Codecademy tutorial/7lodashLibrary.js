@@ -77,6 +77,28 @@ const _ = {
         number = 1;
     }
     return array.slice(number);
+  },
+
+  //Creates a slice of array excluding elements dropped from the 
+  //beginning. Elements are dropped until predicate returns falsey
+  dropWhile(array, predicate) {
+    let dropNumber = array.findIndex(function(element, index) {
+      return !predicate(element, index, array);
+    });
+    return this.drop(array, dropNumber);  
+  },
+
+  //Creates an array of elements split into groups the length of size. 
+  chunk(array, size) {
+    if (size === undefined) {
+      size = 1;
+    }
+    let finalArray = []; 
+    for (let i = 0; i <  array.length; i += size) {
+      let arrayChunk = array.slice(i, size + i);
+      finalArray.push(arrayChunk);
+    }
+    return finalArray
   }
 
   
@@ -86,6 +108,3 @@ const _ = {
 If the provided number is smaller than the lower bound, it will return the lower bound as the final number.
 If the number is larger than the upper bound, it will return the upper bound as the final number
 If the number is already within the two bounds, it will return the number as the final number***/
-
-// Do not write or modify code below this line.
-module.exports = _;
