@@ -68,6 +68,15 @@ const _ = {
         return key;
       }
     } return undefined;
+  },
+
+  //Creates a slice of array with 'number' elements 
+  //dropped from the beginning.
+  drop(array, number){
+    if (number === undefined) {
+        number = 1;
+    }
+    return array.slice(number);
   }
 
   
