@@ -7,9 +7,8 @@ const _ = {
     return clampedValue;
   },
   
-  //returns a boolean value that specifies
-  //whether the number input is between     
-  //'start' and 'end'
+  //returns a boolean value that specifies whether the 
+  //number input is between 'start' and 'end'
   inRange(number, start, end){
     if (typeof end === "undefined") {
         end = start;
@@ -40,6 +39,13 @@ const _ = {
     let endPaddingLength = length - string.length - startPaddingLength;
     let paddedString = ' '.repeat(startPaddingLength).concat(string).concat(' '.repeat(endPaddingLength));
     return paddedString;
+  },
+
+  //returns a boolean to show whether the input object
+  //has a value at the specified key
+  has(object, key) {
+    const hasValue = object[key];
+    return (hasValue != undefined) ? true : false; 
   }
 };
 
