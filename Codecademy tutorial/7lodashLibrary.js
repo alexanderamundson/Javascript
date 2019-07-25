@@ -46,7 +46,18 @@ const _ = {
   has(object, key) {
     const hasValue = object[key];
     return (hasValue != undefined) ? true : false; 
-  }
+  },
+
+  //Swaps each key and its value in the
+  //input object
+  invert(object) {
+    let invertedObject= {};
+    for (let key in object) {
+      let originalValue = object[key];
+      invertedObject.originalValue = key;     
+    }
+    return invertedObject;
+  },
 };
 
 /*** .clamp()
