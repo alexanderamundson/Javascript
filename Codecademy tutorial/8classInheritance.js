@@ -1,3 +1,4 @@
+//Media is the parent class, Book and Movie are subclasses
 class Media {
   constructor(title) {  
     this._title = title;
