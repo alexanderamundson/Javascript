@@ -1,0 +1,24 @@
+li { list-style-type: square;
+    font-size: 16pt;
+   }
+    .mail {
+       margin: auto;
+       padding-top: 10px;
+       padding-bottom: 10px; 
+       width: 800px;
+       background: rgb(153, 198, 211);
+       border: 1px solid red; 
+   }
+   .mail h2 {
+       margin-left: 38px;
+   }
+   input {
+       width: 80%;
+       font-size: 22pt;
+   }
+   input:focus, textarea:focus{
+       background-color: lightgrey; 
+   }
+   input submit {
+       font-size: 12pt;
+   }
