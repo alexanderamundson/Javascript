@@ -8,3 +8,12 @@ function reverseString(str) {
 }
 
 reverseString("hello");
+
+
+//second way using array and reverse
+function reverseString(str) {
+  var array = str.split('');
+  return array.reverse().join('');
+}
+
+reverseString("hello");
