@@ -2,6 +2,18 @@
 //for num times (second argument). Return an 
 //empty string if num is not a positive number.
 
+//method 0: while loop
+function repeatStringNumTimes(str, num) {
+   let repeat = '';
+   if (num < 0) {
+     return '';
+   }
+   for (let i = 0; i < num; i++) {
+       repeat += str;
+   }
+   return (repeat);   
+}
+
 
 //method 1: while loop
 function repeatStringNumTimes(str, num) {
