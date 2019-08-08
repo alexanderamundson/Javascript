@@ -33,6 +33,19 @@ function titleCase(str) {
   return newString.join(' ');
 }
 
+//method 4: map method and substring
+function titleCase(str) {
+  //put each word in array
+  let lowerCase = str.toLowerCase().split(' ');
+  //capitalize each word in array
+  let capitalized = lowerCase.map(function(value) {
+    return value.substring(0,1).toUpperCase() + value.substring(1);
+  });
+  //convert array back to string
+  return capitalized.join(' ');
+  
+}
+
 
 
 
