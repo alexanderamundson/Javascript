@@ -4,5 +4,5 @@ function booWho(bool) {
 }
 
 isBoolean(null);
-booWho(false);// should return true.
-booWho([1, 2, 3])// should return false.
+isBoolean(false);// should return true.
+isBoolean([1, 2, 3])// should return false.
