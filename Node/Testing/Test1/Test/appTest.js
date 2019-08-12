@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const app = require('../App/app');
 
 
-describe('App.sayHello', function(){
+describe('App.sayHello() and App.addNumbers()', function(){
     it('SayHello() should return Hello World', function(){
         let result = app.sayHello();
         assert.equal(result, 'Hello World');
