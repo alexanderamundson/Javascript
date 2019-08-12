@@ -1,0 +1,16 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "SimpleChaiAssertionTest",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "AlexAmundson",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  },
+  "dependencies": {}
+}
