@@ -72,3 +72,13 @@ let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /twinkle/ig; //used to search for all matches of the string twinkle ignoring case
 let result = twinkleStar.match(starRegex);
 console.log(result);//displays 'Twinkle,twinkle'
+
+//7.
+/*
+The period "."  is called the wildcard character.
+The wildcard character . will match any single character.
+*/
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/;//this regex will match a string that contains any character followed by 'un' (sun, fun, bun, etc..)
+let result = unRegex.test(exampleStr);
+console.log(result);//displays true
