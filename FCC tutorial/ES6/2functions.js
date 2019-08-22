@@ -38,4 +38,20 @@ console.log(myConcat([1, 2], [3, 4, 5]));
 
 //4.
 /*
+arrow functions work well with higher order functions
 */
+
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+  "use strict";
+  
+  const squaredIntegers = arr
+   .filter(
+       (elem) =>  elem % parseInt(elem) === 0 && elem > 0)
+   .map(
+       (element) => element * element  ); 
+  
+  return squaredIntegers;
+};
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
