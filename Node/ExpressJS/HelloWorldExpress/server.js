@@ -1,10 +1,19 @@
 const express = require("express");
 const app = express();
 
-//static route
+app.set('view engine', 'pug');
+app.set('views','./views');
+
+
+//static routes
 app.get("/", (req, res)=>{
     res.send("Hello World!!!");
 });
+
+//pug template route
+app.get("/pug", (req,res) => {
+   res.render("index.pug");
+})
 
 /* Dynamic Routes */
 //dynamic route (accepts any id)
