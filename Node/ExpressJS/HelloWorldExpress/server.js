@@ -1,15 +1,12 @@
 const express = require("express");
 const app = express();
 
+app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.set('views','./views');
 
 
-
-
-
-
-//static routes
+/*static routes*/
 app.get("/", (req, res)=>{
     res.send("Hello World!!!");
 });
@@ -19,21 +16,17 @@ app.get("/pug", (req,res) => {
    res.render("hello_pug.pug");
 });
 
+//static jpg file through pug view
+app.get("/staticFile", (req,res) => {
+   res.render("staticFileTest.pug");
+});
+
 app.get('/partials', function(req, res){
    res.render('content');
 });
 
+
 /* Dynamic Routes */
-//dynamic pug view
- app.get('/dynamic_view', function(req, res){
-  res.render('dynamic', {
-     name: "MyGithub", 
-     url:"https://github.com/alexanderamundson"
-  });
-});
-
-
-
 //dynamic route (accepts any id)
 app.get('/:id', function(req, res){
     res.send('The id you specified is ' + req.params.id);
@@ -49,7 +42,14 @@ app.get('/:id', function(req, res){
     res.send('id: ' + req.params.id + ' and name: ' + req.params.name);
  });
 
-
+ /*Dynamic Views*/
+ //dynamic pug view
+ app.get('/dynamic_view', function(req, res){
+   res.render('dynamic', {
+      name: "MyGithub", 
+      url:"https://github.com/alexanderamundson"
+   });
+ });
 
 
 /*Special Routes */
