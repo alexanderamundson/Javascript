@@ -1,15 +1,35 @@
 const express = require("express");
+const bodyParser = require('body-parser');
+const multer = require('multer');
+const upload = multer();
 const app = express();
 
-app.use(express.static('public'));
+////app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.set('views','./views');
 
 
-/*static routes*/
-app.get("/", (req, res)=>{
-    res.send("Hello World!!!");
+/*form routes*/
+app.get("/form", (req, res)=>{
+    res.render("form");
 });
+
+app.use(bodyParser.json()); 
+
+// for parsing application/xwww-
+app.use(bodyParser.urlencoded({ extended: true })); 
+//form-urlencoded
+
+// for parsing multipart/form-data
+app.use(upload.array()); 
+app.use(express.static('public'));
+
+app.post('/form', function(req, res){
+   console.log(req.body);
+   res.send("recieved your request!");
+});
+
+
 
 //pug template route
 app.get("/pug", (req,res) => {
@@ -26,23 +46,14 @@ app.get('/partials', function(req, res){
 });
 
 
-/* Dynamic Routes */
-//dynamic route (accepts any id)
-app.get('/:id', function(req, res){
-    res.send('The id you specified is ' + req.params.id);
- });
+/*Special Routes */
+//'all' ignores the http method
+app.all('/test', (req, res)=>{
+   res.send("the 'all' method works the same regardless of the HTTP method type ----- e.g:"+
+             "app.all('/test', (req, res)=>{ ...");
+});
 
- //Only accepts numeric 3-digit ids
- app.get('/test/:id([0-9]{3})', function(req, res){
-    res.send('3-digit-id is: ' + req.params.id);
- });
-
- //passing in multiple params (:name and :id)
- app.get('/:name/:id', function(req, res) {
-    res.send('id: ' + req.params.id + ' and name: ' + req.params.name);
- });
-
- /*Dynamic Views*/
+/*Dynamic Views*/
  //dynamic pug view
  app.get('/dynamic_view', function(req, res){
    res.render('dynamic', {
@@ -52,17 +63,27 @@ app.get('/:id', function(req, res){
  });
 
 
-/*Special Routes */
-//'all' ignores the http method
-app.all('/test', (req, res)=>{
-    res.send("the 'all' method works the same regardless of the HTTP method type ----- e.g:"+
-              "app.all('/test', (req, res)=>{ ...");
+/* Dynamic Routes*/
+ //Only accepts numeric 3-digit ids
+ app.get('/:id([0-9]{3})', function(req, res){
+   res.send('3-digit-id is: ' + req.params.id);
+});
+
+//dynamic route (accepts any id)
+app.get('/:id', function(req, res){
+    res.send('The id you specified is ' + req.params.id);
  });
 
- //responds to any request that doesn't match any other routes
- app.get('*', function(req, res){
-    res.send('Sorry, this is an invalid URL. 404');
+ //passing in multiple params (:name and :id)
+ app.get('/:name/:id', function(req, res) {
+    res.send('id: ' + req.params.id + ' and name: ' + req.params.name);
  });
+
+
+//responds to any request that doesn't match any other routes
+app.get('*', function(req, res){
+   res.send('Sorry, this is an invalid URL. 404');
+});
 
 
  app.listen("8080");
