@@ -4,7 +4,6 @@ const multer = require('multer');
 const upload = multer();
 const app = express();
 
-////app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.set('views','./views');
 
@@ -13,14 +12,8 @@ app.set('views','./views');
 app.get("/form", (req, res)=>{
     res.render("form");
 });
-
 app.use(bodyParser.json()); 
-
-// for parsing application/xwww-
 app.use(bodyParser.urlencoded({ extended: true })); 
-//form-urlencoded
-
-// for parsing multipart/form-data
 app.use(upload.array()); 
 app.use(express.static('public'));
 
@@ -28,7 +21,6 @@ app.post('/form', function(req, res){
    console.log(req.body);
    res.send("recieved your request!");
 });
-
 
 
 //pug template route
@@ -52,6 +44,7 @@ app.all('/test', (req, res)=>{
    res.send("the 'all' method works the same regardless of the HTTP method type ----- e.g:"+
              "app.all('/test', (req, res)=>{ ...");
 });
+
 
 /*Dynamic Views*/
  //dynamic pug view

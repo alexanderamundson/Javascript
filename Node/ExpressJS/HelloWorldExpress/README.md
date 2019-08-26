@@ -10,3 +10,5 @@ This function can take an object as input and it sends this object to the reques
 
 app.listen()
 listens for connections on the specified port. Server.js listens on port 8080.
+
+server.js also demonstrates get and post routes, pug view templates, displaying static files with Express, and how to display and retrieve from data.
