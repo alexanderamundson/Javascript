@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const members = require('./Members');
 const logger = require('./middleware/logger');
+const otherLogger = require('./middleware/otherLogger');
 
 const app = express();
 
@@ -9,7 +10,17 @@ const app = express();
 app.use(logger);
 
 
+//send json to browser
 app.get('/api/members', (req, res) => res.json(members));
+
+
+
+
+ app.get('/user/:id', otherLogger, (req, res, next) => {
+    res.send('User Info');
+ });
+
+
 
 
 //set a static folder
