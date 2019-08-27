@@ -8,6 +8,9 @@ const app = express();
 //middleware 
 app.use(logger);
 
+//middleware body parser
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 //set a static folder
 app.use(express.static(path.join(__dirname, 'public')));
