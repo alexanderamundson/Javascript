@@ -3,16 +3,19 @@ const path = require('path');
 const members = require('./Members');
 const exphbs = require('express-handlebars');
 const logger = require('./middleware/logger');
+const cookieParser = require('cookie-parser');
 
 
 const app = express();
 
 /* middleware  */
 app.use(logger);
+app.use(cookieParser());
 
 //middleware body parser
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
 
 // handlebars middleware
 app.engine('handlebars', exphbs());
@@ -28,11 +31,13 @@ app.get('/', (req, res) =>
   })
 );
 
+
 //set a static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/api/members', require('./routes/api/members'));
+app.use('/api/cookies', require('./routes/api/cookies') );
+app.use('/api/members', require('./routes/api/members') );
 app.use('/api/users', require('./routes/api/users') );
 
 const PORT = process.env.PORT || 5000;
