@@ -4,6 +4,7 @@ const members = require('./Members');
 const exphbs = require('express-handlebars');
 const logger = require('./middleware/logger');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 
 const app = express();
@@ -11,6 +12,7 @@ const app = express();
 /* middleware  */
 app.use(logger);
 app.use(cookieParser());
+app.use(session({secret: "Shh, its a secret!"}));
 
 //middleware body parser
 app.use(express.json());
@@ -31,6 +33,16 @@ app.get('/', (req, res) =>
   })
 );
 
+//views counter
+app.get('/session', function(req, res){
+  if(req.session.page_views){
+     req.session.page_views++;
+     res.send("You visited this page " + req.session.page_views + " times");
+  } else {
+     req.session.page_views = 1;
+     res.send("Welcome to this page for the first time!");
+  }
+});
 
 //set a static folder
 app.use(express.static(path.join(__dirname, 'public')));
