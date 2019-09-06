@@ -1,13 +1,15 @@
 const express = require('express');
 const path = require('path');
 const members = require('./Members');
-const exphbs = require('express-handlebars');
+const exphbs = require('express-handlebars');/////
 const logger = require('./middleware/logger');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const mongoose = require('mongoose');
 
 
 const app = express();
+
 
 /* middleware  */
 app.use(logger);
@@ -17,6 +19,10 @@ app.use(session({secret: "Shh, its a secret!"}));
 //middleware body parser
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
+
+app.set('view engine', 'pug');
+app.set('views','./views');
 
 
 // handlebars middleware
