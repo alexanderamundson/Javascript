@@ -91,3 +91,12 @@ to find all the vowels in the string quoteSample.
 let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
 let vowelRegex = /[aeiou]/ig; 
 let result = quoteSample.match(vowelRegex); 
+
+//9
+/*
+Inside a character set, you can define a range of characters 
+to match using a hyphencharacter: -
+*/
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi;
+let result = quoteSample.match(alphabetRegex);
