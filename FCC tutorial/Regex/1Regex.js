@@ -82,3 +82,12 @@ let exampleStr = "Let's have fun with regular expressions!";
 let unRegex = /.un/;//this regex will match a string that contains any character followed by 'un' (sun, fun, bun, etc..)
 let result = unRegex.test(exampleStr);
 console.log(result);//displays true
+
+//8.
+/*
+Use a character class with vowels in your regex vowelRegex 
+to find all the vowels in the string quoteSample.
+*/
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/ig; 
+let result = quoteSample.match(vowelRegex); 
