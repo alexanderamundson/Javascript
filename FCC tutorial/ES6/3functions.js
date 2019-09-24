@@ -29,3 +29,19 @@ const sum = (function() {
   console.log(sum(1, 2, 3)); // should be 6
   console.log(sum(1,2, 3, 4) );//should be 10
   console.log(sum(1,2, 3, 4, 5) );//should be 15
+
+//3
+/* 
+the Spread Operator allows us to expand arrays and other expressions 
+in places where multiple parameters or elements are expected.
+  
+-Copy all contents of arr1 into another array arr2 using the spread operator.
+*/
+
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+(function() {
+  "use strict";
+  arr2 = [...arr1]; //spread operator
+})();
+console.log(arr2);
