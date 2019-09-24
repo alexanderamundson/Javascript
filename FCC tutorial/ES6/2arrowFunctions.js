@@ -70,15 +70,13 @@ const squareList = (arr) => {
     (elem) => {
          return elem > 0 && Number.isInteger(elem);
     }).map(
-      (num) =>{
+      (num) => {
          return  num * num;
     });
   
   console.log(squaredIntegers);
-  // change code above this line
   return squaredIntegers;
 };
-// test your code
 const squaredIntegers = squareList(realNumberArray);
 console.log(squaredIntegers); 
 
