@@ -37,7 +37,7 @@ function getMaxOfTmrw(forecast) {
 console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
 
 
-//3.
+//3.1
 /*
 Use destructuring assignment to swap the values of a and b so that a
 receives the value stored in b, and b receives the value stored in a
@@ -50,8 +50,27 @@ let a = 8, b = 6;
 console.log(a); // should be 6
 console.log(b); // should be 8
 
+//3.2
+/*
+A variable's value can be instantiated by destructuring
+ separate from the variable's declaration.
+*/
+let c, d;//declaration
+[c, d] = [1, 2];//instantiation
+console.log(c); // 1
+console.log(d); // 2
 
- //4.
+//3.2
+/* 
+A variable can be assigned a default, in the case that
+the value unpacked from the array is undefined
+*/
+let e, f;
+[e=5, f=7] = [1];
+console.log(e); // 1
+console.log(f); // 7
+
+//4.
 
 //5.
 
