@@ -46,5 +46,22 @@ module.exports = {
 };
 
 //4.
+/* ES6, JavaScript supports a new
+ more readable and flexible syntax for exporting modules:
+
+export default (module name);
+ */
+const Airplane = {};
+Airplane.availableAirplanes = [];
+Airplane.availableAirplanes.push({
+  name: 'AeroJet',
+  fuelCapacity: 800
+ });
+Airplane.availableAirplanes.push({name: 'SkyJet',
+  fuelCapacity: 500
+ });
+
+export default Airplane;
+
 
 //5.
