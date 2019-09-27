@@ -65,3 +65,16 @@ export default Airplane;
 
 
 //5.
+
+/*
+ES6 added the import keyword for importing objects
+ */
+import Airplane from './airplane';//uses 'import' instead of 'require'
+
+function displayFuelCapacity() {
+  Airplane.availableAirplanes.forEach(function(element){
+  console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
+  });
+}
+
+displayFuelCapacity();
