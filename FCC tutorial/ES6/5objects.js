@@ -55,11 +55,34 @@ console.log(carrot.name); //should display 'carrot'
 
 
 //4.
+/*
+ES6 introduced setters and getters
+ */
+function makeClass() {
+  "use strict";
+  class Thermostat {
+    constructor(F) {
+      this._temp = 5/9 * (F - 32)
+    }
+    get temperature() {
+      return this._temp
+    }
+    set temperature(C) {
+      this._temp =  C;
+    }
+  }
+  return Thermostat;
+}
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in C
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
 
 
 
 
-//.String interpolation
+//.String interpolation/Template literal
 /*
 The template literal is a special type of string that makes 
 creating complex strings easier.
