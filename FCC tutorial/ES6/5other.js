@@ -48,3 +48,18 @@ const result = {
   
   };
  createPerson("Zodiac Hasbro", 56, "male"); // returns a proper object
+
+
+//3.Functions in objects
+/*
+Object methods do not require the 'function' keyword in ES6
+*/
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {//instead of:  setGear: function(newGear)...
+    "use strict";
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
