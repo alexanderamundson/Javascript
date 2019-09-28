@@ -29,3 +29,22 @@ const result = {
    *   `<li class="text-warning">linebreak</li>` ]
    **/
   const resultDisplayArray = makeList(result.failure);
+
+  //2. Object value assignment shorthand
+
+  const createPerson = (name, age, gender) => {
+    "use strict";
+    return {
+      name,//these three values are assigned the values of the  
+      age,//function parameters with the same name 
+      gender
+    };
+    //lines 38-40 are the ES6 version of writing:
+    /*
+    name: name,
+    age: age,
+    gender: gender
+     */
+  
+  };
+ createPerson("Zodiac Hasbro", 56, "male"); // returns a proper object
