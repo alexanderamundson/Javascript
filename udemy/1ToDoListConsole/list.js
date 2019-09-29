@@ -25,6 +25,7 @@ function listTasks()  {
         console.log("*************************");
 }
 
+//button events
 let times = 0;
 let button = document.querySelector("button");
 button.addEventListener("click", function(){
@@ -35,9 +36,17 @@ button.addEventListener("click", function(){
         times++;
     } else {
         button.style.display = "none";
-    }
-    
+    } 
 });  
+
+//ordered list events
+let listItems = document.querySelectorAll("li");
+for (let i=0; i < listItems.length; i++) {
+    listItems[i].addEventListener("click", function(){
+        this.style.color = "blue";
+        this.style.textDecoration = "line-through";
+    });
+}
 
 
 }, 500);
