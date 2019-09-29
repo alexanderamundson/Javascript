@@ -1,5 +1,6 @@
 window.setTimeout(function() {
 
+  
 let tasks = ["Walk Dog (1pm)"];
 let input = prompt("What would you like to do?");
 
@@ -23,4 +24,22 @@ function listTasks()  {
     tasks.forEach((task, i) => {console.log( (i )+ " : " + task)});
         console.log("*************************");
 }
+
+let times = 0;
+let button = document.querySelector("button");
+button.addEventListener("click", function(){
+    alert("button was clicked!");
+    if (times === 0) {
+        console.log(button);
+        button.innerHTML = "Do NOT Click Again";
+        times++;
+    } else {
+        button.style.display = "none";
+    }
+    
+});  
+
+
 }, 500);
+
+
