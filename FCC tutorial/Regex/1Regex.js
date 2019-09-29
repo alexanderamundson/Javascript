@@ -104,8 +104,18 @@ let result = quoteSample.match(alphabetRegex);
 //10.
 /*
 Create a single regex that matches a range of letters
- between hand s, and a range of numbers between 2and 6. 
+ between h and s, and a range of numbers between 2and 6. 
 */
 let quoteSample = "Blueberry 3.141592653s are delicious.";
 let myRegex = /[h-s2-6]/ig; 
 let result = quoteSample.match(myRegex);
+
+//11.
+/*
+place a (^) character after the opening
+bracket and before the characters you do not want to match.
+ */
+let quoteSample = "3 blind mice.";
+let myRegex = /[^aeiou0-9]/ig;
+let result = quoteSample.match(myRegex); 
+console.log(result);//displays:  ,b,l,n,d, ,m,c,.
