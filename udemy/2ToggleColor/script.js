@@ -3,13 +3,7 @@ const text = document.querySelector("p");
 let isWhite = true;
 let isArial = true;
 button.addEventListener("click", function() {
-    if (isWhite) {
-       document.body.style.background = "silver";
-       
-    } else {
-        document.body.style.background = "white";
-    } 
-    isWhite = !isWhite;
+    document.body.classList.toggle("silver");
 });
 
 text.addEventListener("click", function() {
