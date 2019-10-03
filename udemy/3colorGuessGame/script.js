@@ -19,12 +19,27 @@ for (let i=0; i < squares.length; i++) {
             h1.style.backgroundColor = clickedColor;
             changeAllColors(winningColor);
             messageDisplay.textContent = "Correct!";
+            resetButton.innerHTML = "Play again";
         } else {
             this.style.backgroundColor = "#232323";
             messageDisplay.textContent = "Try Again!";
         }
     });
 }
+
+resetButton.addEventListener("click", function(){
+    //reset all colors
+    colors = generateRandomColors(6);
+    winningColor = pickColor();
+    colorDisplay.textContent = winningColor;
+    messageDisplay.textContent = "";
+    
+    for(let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colors[i];
+    }
+    h1.style.backgroundColor = "#232323";
+});
+
 
 function pickColor() {
     return colors[Math.floor(Math.random() * colors.length)];
@@ -53,17 +68,7 @@ function randomColor() {
     //^^^must include spaces after commas or will cause compare problem on ln 17  
 }; 
 
-resetButton.addEventListener("click", function(){
-    //reset all colors
-    colors = generateRandomColors(6);
-    winningColor = pickColor();
-    colorDisplay.textContent = winningColor;
-    messageDisplay.textContent = "";
-    
-    for(let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colors[i];
-    }
-});
+
 
 
 
