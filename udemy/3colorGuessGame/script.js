@@ -22,7 +22,7 @@ for (let i=0; i < squares.length; i++) {
             h1.style.backgroundColor = clickedColor;
             changeAllColors(winningColor);
             messageDisplay.textContent = "Correct!";
-            resetButton.innerHTML = "Play again";
+            resetButton.innerHTML = "Play again?";
         } else {
             this.style.backgroundColor = "#232323";
             messageDisplay.textContent = "Try Again!";
@@ -31,25 +31,19 @@ for (let i=0; i < squares.length; i++) {
 }
 
 resetButton.addEventListener("click", function(){
-    //reset all colors
-    colors = generateRandomColors(numOfSquares);
-    winningColor = pickColor();
-    colorDisplay.textContent = winningColor;
-    messageDisplay.textContent = "";
-    
-    for(let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colors[i];
-    }
-    h1.style.backgroundColor = "#232323";
+    resetSquares();
 });
 
 easyBtn.addEventListener("click", function(){
+    /*
     hardBtn.classList.remove("selected");
     easyBtn.classList.add("selected");
     numOfSquares = 3;
     colors = generateRandomColors(numOfSquares);
     winningColor = pickColor();
     colorDisplay.textContent = winningColor;
+    h1.style.backgroundColor = "#232323";
+    messageDisplay.textContent = "";
     for(let i = 0; i < squares.length; i++) {
         if (colors[i]) {
             squares[i].style.backgroundColor = colors[i];
@@ -57,6 +51,8 @@ easyBtn.addEventListener("click", function(){
             squares[i].style.display = "none";
         }
     }
+    */
+   generateEasyGame();
 });
 
 hardBtn.addEventListener("click", function(){
@@ -66,6 +62,8 @@ hardBtn.addEventListener("click", function(){
     colors = generateRandomColors(numOfSquares);
     winningColor = pickColor();
     colorDisplay.textContent = winningColor;
+    h1.style.backgroundColor = "#232323";
+    messageDisplay.textContent = "";    
     for(let i = 0; i < squares.length; i++) {
             squares[i].style.backgroundColor = colors[i];
             squares[i].style.display = "block";
@@ -101,9 +99,36 @@ function randomColor() {
     // will cause compare problem on ln 21  
 }; 
 
+function resetSquares() {
+    colors = generateRandomColors(numOfSquares);
+    winningColor = pickColor();
+    colorDisplay.textContent = winningColor;
+    messageDisplay.textContent = "";
+    resetButton.textContent = "New Colors";
+    for(let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colors[i];
+    }
+    h1.style.backgroundColor = "#232323";
+};
 
 
-
+function generateEasyGame() {
+    hardBtn.classList.remove("selected");
+    easyBtn.classList.add("selected");
+    numOfSquares = 3;
+    colors = generateRandomColors(numOfSquares);
+    winningColor = pickColor();
+    colorDisplay.textContent = winningColor;
+    h1.style.backgroundColor = "#232323";
+    messageDisplay.textContent = "";
+    for(let i = 0; i < squares.length; i++) {
+        if (colors[i]) {
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].style.display = "none";
+        }
+    }  
+};
 
 
 
