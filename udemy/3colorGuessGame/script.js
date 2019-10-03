@@ -1,9 +1,12 @@
-let colors = generateRandomColors(6);
+let numOfSquares = 6;
+let colors = generateRandomColors(numOfSquares);
 const squares = document.querySelectorAll(".square");
 const messageDisplay = document.getElementById("message");
 const h1 = document.querySelector("h1");
 const resetButton = document.querySelector("#reset");
 let colorDisplay = document.getElementById("colorDisplay");
+const easyBtn = document.querySelector("#easyBtn");
+const hardBtn = document.querySelector("#hardBtn");
 let winningColor = pickColor();
 colorDisplay.textContent = winningColor;
 
@@ -29,7 +32,7 @@ for (let i=0; i < squares.length; i++) {
 
 resetButton.addEventListener("click", function(){
     //reset all colors
-    colors = generateRandomColors(6);
+    colors = generateRandomColors(numOfSquares);
     winningColor = pickColor();
     colorDisplay.textContent = winningColor;
     messageDisplay.textContent = "";
@@ -38,6 +41,35 @@ resetButton.addEventListener("click", function(){
         squares[i].style.backgroundColor = colors[i];
     }
     h1.style.backgroundColor = "#232323";
+});
+
+easyBtn.addEventListener("click", function(){
+    hardBtn.classList.remove("selected");
+    easyBtn.classList.add("selected");
+    numOfSquares = 3;
+    colors = generateRandomColors(numOfSquares);
+    winningColor = pickColor();
+    colorDisplay.textContent = winningColor;
+    for(let i = 0; i < squares.length; i++) {
+        if (colors[i]) {
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].style.display = "none";
+        }
+    }
+});
+
+hardBtn.addEventListener("click", function(){
+    easyBtn.classList.remove("selected");
+    hardBtn.classList.add("selected");
+    numOfSquares = 6;
+    colors = generateRandomColors(numOfSquares);
+    winningColor = pickColor();
+    colorDisplay.textContent = winningColor;
+    for(let i = 0; i < squares.length; i++) {
+            squares[i].style.backgroundColor = colors[i];
+            squares[i].style.display = "block";
+    }
 });
 
 
@@ -65,7 +97,8 @@ function randomColor() {
     let green = Math.floor(Math.random() * 255);
     let blue = Math.floor(Math.random() * 255);
     return "rgb(" + red + ", " + green + ", " + blue + ")"; 
-    //^^^must include spaces after commas or will cause compare problem on ln 17  
+    //^^^must include spaces after commas or
+    // will cause compare problem on ln 21  
 }; 
 
 
