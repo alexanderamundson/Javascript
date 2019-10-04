@@ -119,3 +119,14 @@ let quoteSample = "3 blind mice.";
 let myRegex = /[^aeiou0-9]/ig;
 let result = quoteSample.match(myRegex); 
 console.log(result);//displays:  ,b,l,n,d, ,m,c,.
+
+//12.
+/*
+ To match a character (or group of characters) that appears
+ one or more times in a row. You can use the "+" character 
+*/
+
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/g; 
+let result = difficultSpelling.match(myRegex);
+console.log(result);//displays [ss, ss]
