@@ -123,10 +123,22 @@ console.log(result);//displays:  ,b,l,n,d, ,m,c,.
 //12.
 /*
  To match a character (or group of characters) that appears
- one or more times in a row. You can use the "+" character 
+ one or more times in a row, You can use the "+" character 
 */
 
 let difficultSpelling = "Mississippi";
 let myRegex = /s+/g; 
 let result = difficultSpelling.match(myRegex);
 console.log(result);//displays [ss, ss]
+
+//13.
+/* 
+To match a character (or group of characters) that appears 
+ZERO or more times in a row, you can us the "*" character.
+(same as "+" in #12 above except it also matches a sequence
+of ZERO instances of the specified character of string of chars)
+*/
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aaa*/i; 
+let result = chewieQuote.match(chewieRegex);
+console.log(result);//displays Aaaaaaaaaaaaaaa
