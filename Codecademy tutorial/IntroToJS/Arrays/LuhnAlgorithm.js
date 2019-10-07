@@ -23,6 +23,7 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
 
 //validates credit card number with Luhn algorithm
+//the 'array' parameter is a credit card number stored in an arrray
 function validateCred(array) {
   let length = array.length;
   let checkArray = array.slice();
@@ -30,8 +31,7 @@ function validateCred(array) {
   //double every other num (if > 9, subtract 9)
   for (let i= length - 2; i >= 0; i-=2) {
     let doubledVal = checkArray[i] * 2;
-    (doubledVal > 9) ? checkArray[i] = doubledVal -9 : checkArray[i] = doubledVal;
-    
+    (doubledVal > 9) ? checkArray[i] = doubledVal -9 : checkArray[i] = doubledVal;  
   }
   //sum all digits in card number
   let sum = checkArray.reduce(function getSum(total, num) {
@@ -41,19 +41,34 @@ function validateCred(array) {
   return (sum % 10 === 0) ? true : false;
 };
 
+//loops through array of CC #s and returns those that are invalid
+function findInvalidCards(creditCardNums) {
+  let invalidCards = [];
+  for (let i = 0; i < creditCardNums.length; i++) {
+  	if ( !(validateCred(creditCardNums[i]))  ) {
+       invalidCards.push(creditCardNums[i]);   
+    } 
+  }
+  return invalidCards;
+};
 
+//returns array of companies which issued faulty CC #s
+function idInvalidCardCompanies(invalidCards) {
+  let companies = [];
+  return companies;
+};
 
 console.log( validateCred(invalid1));
 console.log( validateCred(invalid2));
 console.log( validateCred(invalid3));
 console.log( validateCred(invalid4));
-console.log( validateCred(invalid5));//displays false
+console.log( validateCred(invalid5));
 
 console.log( validateCred(valid1));
 console.log( validateCred(valid2));
 console.log( validateCred(valid3));
 console.log( validateCred(valid4));
-console.log( validateCred(valid5));//displays true
+console.log( validateCred(valid5));
 
 
 
