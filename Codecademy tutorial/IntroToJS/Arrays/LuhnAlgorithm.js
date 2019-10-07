@@ -38,8 +38,9 @@ function validateCred(array) {
   	return total + num;
   });
   //If the sum modulo 10 is 0, then the number is valid, else it's invalid.
-  return (sum % 10 === 0) ? true : false;
+  return (sum % 10 === 0);
 };
+
 
 //loops through array of CC #s and returns those that are invalid
 function findInvalidCards(creditCardNums) {
@@ -55,20 +56,45 @@ function findInvalidCards(creditCardNums) {
 //returns array of companies which issued faulty CC #s
 function idInvalidCardCompanies(invalidCards) {
   let companies = [];
+  for (let i = 0; i < invalidCards.length; i++) {
+    if (invalidCards[i][0] < 3 ||  invalidCards[i][0] > 6) {
+      console.log("Company not found");
+    } else {
+      switch (invalidCards[i][0]) {
+        case 3: if (companies.indexOf("American Express") === -1) {
+                companies.push("American Express");
+                } break;
+        case 4: if (companies.indexOf('Visa') === -1){
+                companies.push("Visa");
+                } break;
+        case 5: if (companies.indexOf('Mastercard') === -1) {
+                companies.push("Mastercard");
+                } break;
+        case 6: if (companies.indexOf('Discover') === -1) {
+                companies.push("Discover");
+                } break;
+      }
+    }
+  }
   return companies;
 };
 
-console.log( validateCred(invalid1));
-console.log( validateCred(invalid2));
-console.log( validateCred(invalid3));
-console.log( validateCred(invalid4));
-console.log( validateCred(invalid5));
 
-console.log( validateCred(valid1));
-console.log( validateCred(valid2));
-console.log( validateCred(valid3));
-console.log( validateCred(valid4));
-console.log( validateCred(valid5));
+// Test validateCred function:
+console.log(validateCred(valid1)); // Should print true
+console.log(validateCred(invalid1)); // Should print false
+
+/**** Uncomment out following lines to test above functions *****
+// Test findInvalidCards function:
+console.log(findInvalidCards([valid1, valid2, valid3, valid4, valid5]));// Shouldn't print anything
+console.log(findInvalidCards([invalid1, invalid2, invalid3, invalid4, invalid5])); // Should print all of the numbers
+console.log(findInvalidCards(batch)); //should print all 5 invalids and mystery1,3,and 4
+
+// Test idInvalidCardCompanies function:
+console.log(idInvalidCardCompanies([invalid1])); // Should print['visa']
+console.log(idInvalidCardCompanies([invalid2])); // Should print ['mastercard']
+console.log(idInvalidCardCompanies(batch)); //should print array of all 4 CC companies
+*/
 
 
 
