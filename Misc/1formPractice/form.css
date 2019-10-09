@@ -1,0 +1,19 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    font-size: 22px;
+}
+#form-1 {
+}
+
+#text-input-1 {
+    width: 600px;
+    height: 25px;
+}
+
+#output-div {
+    margin-top: 20px;
+    display: inline-block;
+    border: 3px solid red; 
+    width: 480px; height: 80px;
+}
