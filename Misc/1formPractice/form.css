@@ -23,8 +23,9 @@ main {
     margin-top: 20px;
     display: inline-block;
     border: 3px solid red; 
-    width: 480px; 
+    width: 400px; 
     height: 46%;
+    overflow-wrap: break-word;
 }
 
 #sticky-container {
