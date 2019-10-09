@@ -1,13 +1,15 @@
 html, body {
     margin: 0;
-    height: 10000px;//%;
+    height: 10000px;
+    border: 10px solid cornflowerblue;
     font-size: 22px;
+
 }
 
 main {
     height: 1000px;
     border: 6px solid crimson;
-    position: absolute;
+    position: static;
 }
 #form-1 {
 }
@@ -21,7 +23,8 @@ main {
     margin-top: 20px;
     display: inline-block;
     border: 3px solid red; 
-    width: 480px; height: 80px;
+    width: 480px; 
+    height: 46%;
 }
 
 #sticky-container {
@@ -29,18 +32,24 @@ main {
     display: inline-block;
     border: 3px dotted green;
     text-align: center;
-    height: 90%;
+    height: 50%;
     
 
 }
 
 #sticky-div {
-    
     position: -webkit-sticky;
     position: sticky;
+    top: 0px;
     display: inline-block;
     width: 80%;
-    height: 50%;
+    height: 30%;
     border: 3px dotted blue;
+}
 
+.display-practice-div {
+    background-color: yellow;
+    color: black;
+    display: inline-block;
+    border: 3px dotted darkkhaki;
 }
