@@ -1,3 +1,71 @@
+const form = document.getElementById("addForm");
+const itemList = document.getElementById("items");
+
+form.addEventListener("submit", addItem);
+itemList.addEventListener("click", removeItem);
+
+function addItem(event) {
+    event.preventDefault();
+    //get input value
+    let newItem = document.getElementById("item").value;
+    //create new li
+    let li = document.createElement('li');
+    li.className = 'list-group-item';
+    //add text node with input value
+    li.appendChild(document.createTextNode(newItem));
+    //create delete button element
+    let delBtn = document.createElement('button');
+    //add classes to delete button
+    delBtn.className ='btn btn-danger btn-sm float-right delete';
+    //append text node
+    delBtn.appendChild(document.createTextNode('X'));
+    //append delete button to li
+    li.appendChild(delBtn);
+    //append li to list
+    itemList.appendChild(li);
+    console.log(li);
+}
+
+function removeItem(event) {
+    if (event.target.classList.contains('delete')) {
+        if (confirm) {
+            
+        }
+    }
+
+};
+
+
+
+/*
+const itemList = document.getElementById("items");
+const itemList = document.getElementById("items");
+const itemList = document.getElementById("items");
+const itemList = document.getElementById("items");
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // EXAMINE THE DOCUMENT OBJECT //
 
 // console.dir(document);
