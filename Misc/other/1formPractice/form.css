@@ -1,14 +1,21 @@
 html, body {
     margin: 0;
     height: 10000px;
-    border: 10px solid cornflowerblue;
     font-size: 22px;
-
+}
+html {
+    border: 10px solid cornflowerblue;
+    background: silver;
+}
+body {
+    border: 10px solid darkturquoise;
+    background: wheat;
 }
 
 main {
     height: 1000px;
     border: 6px solid crimson;
+    background: chartreuse;
     position: static;
 }
 #form-1 {
