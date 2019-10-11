@@ -1,3 +1,4 @@
+//Solution 1
 function diffArray(arr1, arr2) {
 
     var newArr = [];
@@ -38,3 +39,20 @@ function diffArray(arr1, arr2) {
              ["diorite", "andesite", "grass", "dirt", "dead shrub"]];
   diffArray( test2[0], test2[1]   );//returns ["diorite", "pink wool"]
   
+
+//Solution 2 (array.filter() uses callback function )
+function diffArray(arr1, arr2) {
+    var merged = arr1.concat(arr2);
+    return merged.filter(function(element){
+      return !(arr1.includes(element) && arr2.includes(element));
+    });
+}
+
+//Solution 3 (array.filter() calls named function using bind to pass element )
+function diffArray(arr1, arr2) {
+    function notInBoth(element){
+      return !(arr1.includes(element) && arr2.includes(element));
+    }  
+    var merged = arr1.concat(arr2);
+    return merged.filter(notInBoth.bind(null));
+}
