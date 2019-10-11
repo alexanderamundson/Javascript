@@ -78,5 +78,17 @@ console.log(htmlColorNames(arr));
 
 
 //7
-/*
- */
+/*SLICE() [CREATES A SHALLOW COPY OF ARRAY OR PORTION OF AN ARRAY]
+calling the array slice() method without passing any parameters
+returns a copy of the array.  slice can take 2 parameters to return
+a copy of a portion of the array. It copies the elements from the 
+index of param 1 up to,but not including, the value at the index 
+of param 2.
+*/
+function forecast(arr) {
+    var a = arr.slice(2, 4)//arr[2] and arr[3] are stored in 'a'
+    return a;
+ }
+  
+var myArr = ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms'];
+console.log(forecast(myArr));
