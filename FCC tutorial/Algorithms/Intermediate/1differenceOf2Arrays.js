@@ -1,52 +1,30 @@
 function diffArray(arr1, arr2) {
-    var longerA = [];
-    var shorterA = [];
-  
-    if (arr1.length >= arr2.length) {
-       longerA = arr1; shorterA = arr2;
-    }
-    if (arr2.length >= arr1.length) {
-       longerA = arr2; shorterA = arr1;
-    }
-  
+
     var newArr = [];
     var found = false;
     //loop thru each element in arr1
-    for (var i = 0; i < longerA.length; i++) {
-      for (var j=0; j < shorterA.length; j++) {
+    for (var i = 0; i < arr1.length; i++) {
+      for (var j=0; j < arr2.length; j++) {
         //check if each element in arr1 is in arr2
-        if (shorterA[j] === longerA[i]) {
+        if (arr2[j] === arr1[i]) {
           found = true;
         }
       }//if element is in both, add to newArr
       if (!found) {
-        newArr.push(longerA[i]); 
+        newArr.push(arr1[i]); 
       }
-      found =false;
+      found = false;
     }
     
-    //reset longerA and shorterA
-    if (arr1.length >= arr2.length) {
-     longerA = arr1; shorterA = arr2;
-    }
-    if (arr2.length >= arr1.length) {
-     longerA = arr2; shorterA = arr1;
-    }
-    //reset found
-    found = false;
-  
     //Now, check if vals in arr2 are in arr1
-    for (let i = 0; i < shorterA.length; i++) {
-      console.log("work");
-      console.log("iteration: " + i);
-      for (var j=0; j < longerA.length; j++) {
-        if (longerA[j] === shorterA[i]) {
+    for (let i = 0; i < arr2.length; i++) {
+      for (var j=0; j < arr1.length; j++) {
+        if (arr1[j] === arr2[i]) {
           found = true;
-          console.log("in both "+ shorterA[i])
         }
       }
       if (!found) {
-        newArr.push(shorterA[i]); 
+        newArr.push(arr2[i]); 
       }
       found = false;
     }
