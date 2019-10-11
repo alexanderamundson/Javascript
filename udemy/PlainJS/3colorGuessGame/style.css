@@ -25,6 +25,7 @@ span {
 #container {
     max-width: 600px;
     margin: 0 auto;
+    overflow: auto;
 }
 
 button {
@@ -68,8 +69,51 @@ button:hover {
     transition: all 1.0s;
     -webkit-transition: all 1.0s;
     -moz-transition: all 1.0s;
+    border: 4px dotted lightseagreen;
+    box-sizing: border-box;
 }
 
 .selected {
     background-color: red;
 }
+
+#ball  {
+    border: 1px dashed red;
+    text-align: center;
+    font-size: 1.5em;
+    color: lime;
+    vertical-align: middle;
+    background: linen;
+    display: block;
+    width: 200px;
+    height: 100px;
+    margin: 50px auto;
+    position: fixed; 
+    left: 0%;
+    border-radius: 0%;
+    animation-name: fade;
+    animation-duration: 3s;
+}
+.ball {
+    border: 1px dashed red;
+    text-align: center;
+    color: lime;
+    vertical-align: middle;
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 30px auto;
+    position: fixed; 
+    left: 0%;
+    border-radius: 0%;
+    animation-name: fade;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity: 0.1;
+    }
+  }

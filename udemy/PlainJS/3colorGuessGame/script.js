@@ -7,6 +7,8 @@ const resetButton = document.querySelector("#reset");
 let colorDisplay = document.getElementById("colorDisplay");
 const easyBtn = document.querySelector("#easyBtn");
 const hardBtn = document.querySelector("#hardBtn");
+let ball = document.getElementById('ball');
+let time = 1;
 let winningColor = pickColor();
 colorDisplay.textContent = winningColor;
 
@@ -124,3 +126,8 @@ function randomColor() {
 
 
 
+function ani(){
+    ball.classList.toggle("ball");
+    (time % 2 === 0) ? ball.innerText = "Click to activate me" : ball.innerText = "Click to stop me!";
+    time++;
+}
