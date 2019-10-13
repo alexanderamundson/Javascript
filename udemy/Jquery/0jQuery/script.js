@@ -11,6 +11,6 @@ element.addEventListener("mouseover", function(){
 });
 
 $("button").dblclick(function() {
-    $(this).css("width", "180px")
-    $(this).css({"border: 5px solid green})
+    $(this).css("width", "180px");
+    $(this).css("border: 5px solid green");
 });
