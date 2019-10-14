@@ -12,7 +12,7 @@ console.log(arrayName.length);//displays 4
 /*PUSH() AND UNSHIFT() METHODS  [ADD ELEMENT/S TO ARRAY]
 An element or a series of elements can be added to an array using the
 push or unshift methods. push adds element/s to the end of the array. unshift 
-adds element/s to the end of the array.
+adds element/s to the beginning of the array.
  */
 var array = [1,2,3];
 array.push(4);
@@ -34,8 +34,8 @@ console.log(array);//displays 2
 /*POP() AND SHIFT() METHODS [BOTH OF THESE METHODS RETURN THE REMOVED ELEMENT]
  */
 function popShift(arr) {
-    let popped = arr.pop(); // change this line
-    let shifted = arr.shift(); // change this line
+    let popped = arr.pop(); 
+    let shifted = arr.shift(); 
     return [shifted, popped];
 }
 var myarray = ['challenge', 'is', 'not', 'complete'];
@@ -92,3 +92,34 @@ function forecast(arr) {
   
 var myArr = ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms'];
 console.log(forecast(myArr));
+
+//8A
+/*[...] Spread Operator ES6
+ ES6's new spread operator allows us to easily copy all of an array's elements, 
+ in order, with a simple and highly readable syntax: simple the array name 
+ preceded by ellipses.  (...arrayName)
+*/
+
+//this function returns 'num' copies of 'arr'
+function copyMachine(arr, num) {
+    let newArr = [];
+    while (num >= 1) {
+      newArr.push( [...arr] );//adds a copy of arr using spread operator ES6
+      num--;
+    }
+    return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
+//displays true, false, true, true, false, true
+
+
+//8B
+/*Another expample of Array Spread Operator
+*/
+function spreadOut() {
+    let fragment = ['to', 'code'];
+    let sentence = ['learning', ...fragment, 'is', 'fun']
+    return sentence;
+}  
+console.log(spreadOut());
+//displays: learning,to,code,is,fun
