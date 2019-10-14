@@ -123,3 +123,17 @@ function spreadOut() {
 }  
 console.log(spreadOut());
 //displays: learning,to,code,is,fun
+
+
+//9
+/*Check for the presence of a specified element in an given array. indexOf()
+indexOf()takes an element as a parameter, and when called, 
+it returns the position, or index, of that element, or -1 
+if the element does not exist on the array.
+*/
+function quickCheck(arr, elem) {
+    return arr.indexOf(elem) != -1;
+}  
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));//displays: false
+quickCheck([3, 5, 9, 125, 45, 2], 125);//returns true
+
