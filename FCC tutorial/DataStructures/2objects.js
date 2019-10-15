@@ -63,3 +63,33 @@ delete foods.oranges;
 delete foods.plums;
 delete foods.strawberries;
 console.log(foods);
+
+//4
+//use  objectName.hasOwnProperty('key') or 'key' in objectName 
+//to check if 'objectName' has a specified key
+let users = {
+    Alan: {
+      age: 27,
+      online: true
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    },
+    Sarah: {
+      age: 48,
+      online: true
+    },
+    Ryan: {
+      age: 19,
+      online: true
+    }
+};
+function isEveryoneHere(obj) {
+     /*  ALTERNATIVE SOLUTION
+     return ('Alan' in obj && 'Jeff' in obj && 'Sarah' in obj && 'Ryan' in obj ); 
+     */
+     return obj.hasOwnProperty('Alan') && obj.hasOwnProperty('Jeff') &&  obj.hasOwnProperty('Sarah') && obj.hasOwnProperty('Ryan');
+}
+  
+console.log(isEveryoneHere(users));//displays true
