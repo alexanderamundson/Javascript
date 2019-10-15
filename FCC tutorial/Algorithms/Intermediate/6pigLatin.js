@@ -25,10 +25,10 @@ function translatePigLatin(str) {
      }
     }
     return str.substring(firstVowelIndex) + consCluster +  "ay";
-  }
-  
-  translatePigLatin("california");//should return "aliforniacay".
-  translatePigLatin("paragraphs");//should return "aragraphspay".
-  translatePigLatin("glove");//should return "oveglay".
-  translatePigLatin("algorithm");//should return "algorithmway".
-  translatePigLatin("eight");//should return "eightway".
+}
+ 
+translatePigLatin("california");//should return "aliforniacay".
+translatePigLatin("paragraphs");//should return "aragraphspay".
+translatePigLatin("glove");//should return "oveglay".
+translatePigLatin("algorithm");//should return "algorithmway".
+translatePigLatin("eight");//should return "eightway".
