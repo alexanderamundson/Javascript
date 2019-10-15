@@ -1,4 +1,4 @@
-//1 Adding object properties
+//1A Adding/Modifying object properties
 let foods = {
     apples: 25,
     oranges: 32,
@@ -12,3 +12,17 @@ foods.grapes = 35;
 foods["strawberries"] = 27;
   
 console.log(foods);
+
+//1B 
+//properties of objects nested in another object can
+//be modified in the same ways shown in 1A
+let userActivity = {
+    id: 23894201352,
+    date: 'January 1, 2017',
+    data: {
+      totalUsers: 51,
+      online: 42
+    }
+};
+userActivity.data.online = 45;
+console.log(userActivity);
