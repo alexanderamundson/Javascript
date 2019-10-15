@@ -9,7 +9,9 @@ let foods = {
 //or with bracket notation.
 foods.bananas = 13;
 foods.grapes = 35;
-foods["strawberries"] = 27;
+foods["strawberries"] = 27;//use quotes around the property name
+//when using bracket notation if the property name is not a
+//variable already instantiated in preceding code
   
 console.log(foods);
 
@@ -26,3 +28,21 @@ let userActivity = {
 };
 userActivity.data.online = 45;
 console.log(userActivity);
+
+//2 bracket notation using a pre-defined variable.
+//Because 'scannedItem' is a variable for a pre-defined
+//value (apples), it should not be wrapped in quotes 
+//when being used as a property name in bracket notation
+//as seen  in the checkInventory method.
+let foods = {
+    apples: 25,
+    oranges: 32,
+    plums: 28,
+    bananas: 13,
+    grapes: 35,
+    strawberries: 27
+  };
+  function checkInventory(scannedItem) {
+    return foods[scannedItem]
+  }
+  console.log(checkInventory("apples"));
