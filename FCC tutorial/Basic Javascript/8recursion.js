@@ -33,3 +33,23 @@ rangeOfNumbers(6, 9);// should return [6, 7, 8, 9].
 rangeOfNumbers(4, 4);// should should return [4].
 
 
+//3.
+/*
+Append the numbers n through 1 based on the n parameter to myArray.
+For example, calling this function with n = 5 will pad the array 
+with the numbers [5, 4, 3, 2, 1] inside of it.
+*/
+function countdown(myArray, n){
+    //base case 
+    if (n < 0) {
+      return [];
+    } else if (n === 1) {
+      myArray.push(n);
+      return myArray;
+    }  
+    myArray.push(n);
+    //recursive step
+    myArray = countdown(myArray, n - 1);
+    return myArray;
+}
+  
