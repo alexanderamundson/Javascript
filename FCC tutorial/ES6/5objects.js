@@ -8,7 +8,7 @@
       age,//function parameters with the same name 
       gender
     };
-    //lines 38-40 are the ES6 version of writing:
+    //lines 7-9 are the ES6 version of writing:
     /*
     name: name,
     age: age,
