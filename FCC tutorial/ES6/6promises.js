@@ -22,7 +22,7 @@ const makeServerRequest = new Promise((resolve, reject) => {
     }
 });
   
-//3 Then() method
+//3a Then() method
 /*
 The then() method is executed immediately after your promise is fulfilled with resolve
 */
@@ -40,3 +40,12 @@ const makeServerRequest = new Promise((resolve, reject) => {
 makeServerRequest.then(function(result) {
   console.log(result)}
 );
+
+//3b
+/*catch() method runs if promise is rejected
+*/
+makeServerRequest.then( result => {
+    console.log(result);
+}).catch( error => {
+    console.log(error);
+});
