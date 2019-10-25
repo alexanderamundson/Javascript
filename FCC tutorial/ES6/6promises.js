@@ -22,3 +22,21 @@ const makeServerRequest = new Promise((resolve, reject) => {
     }
 });
   
+//3 Then() method
+/*
+The then() method is executed immediately after your promise is fulfilled with resolve
+*/
+const makeServerRequest = new Promise((resolve, reject) => {
+    // responseFromServer is set to true to represent a successful response from a server
+    let responseFromServer = true;
+      
+    if(responseFromServer) {
+      resolve("We got the data");
+    } else {  
+      reject("Data not received");
+    }
+});
+//the callback in the then() method runs when the promise has been resolved
+makeServerRequest.then(function(result) {
+  console.log(result)}
+);
