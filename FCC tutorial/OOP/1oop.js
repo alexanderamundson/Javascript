@@ -49,3 +49,17 @@ function Dog() {
     this.numLegs = 4;
 }
 let hound = new Dog();
+
+
+
+//6. parameters can be passed into a constructor to make 
+//creating properties more flexible
+
+function Dog(name, color) {
+    this.name  = name;
+    this.color = color;
+    this.numLegs = 4;
+}
+
+let terrier = new Dog("Spot", "Black");//creates dog with name Spot that is black
+let shepherd = new Dog("Sherman", "Brown");//creates dog with name Sherman that is brown
