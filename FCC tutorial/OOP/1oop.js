@@ -38,4 +38,14 @@ function Dog() {
 }
 
 
-//5.
+//5.  the new operator is used when calling a constructor
+
+/*The 'new' operator tells JavaScript to create an instance 
+of Dog called hound
+*/
+function Dog() {
+    this.name = "Rupert";
+    this.color = "brown";
+    this.numLegs = 4;
+}
+let hound = new Dog();
