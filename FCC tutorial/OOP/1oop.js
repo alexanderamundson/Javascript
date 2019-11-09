@@ -78,8 +78,22 @@ function House(numBedrooms) {
 let myHouse = new House(5);
 console.log(myHouse instanceof House);//prints true
 
-//8.
-
+//8. object properties instantiate in the constructore are called 
+//'own' properties 'instance' properties.
+//In fact every instance of the object will have its own copy of these 'own' properties
+function Bird(name) {
+    this.name = name;
+    this.numLegs = 2;
+  }
+  
+  let canary = new Bird("Tweety");
+  let ownProps = [];
+  
+  for (let property in canary) {
+      ownProps.push(property);
+  }
+  console.log(ownProps);//prints ["name", "numLegs"]
+  
 
 //9.
 
