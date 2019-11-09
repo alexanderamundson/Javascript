@@ -63,3 +63,25 @@ function Dog(name, color) {
 
 let terrier = new Dog("Spot", "Black");//creates dog with name Spot that is black
 let shepherd = new Dog("Sherman", "Brown");//creates dog with name Sherman that is brown
+
+
+//7. Anytime a constructor function creates a new object, 
+//that object is said to be an 'instance' of its constructor
+
+/*The instanceof operator allows you to compare an object to a constructor, 
+returning true or false based on whether or not that object 
+was created with the constructor. */
+function House(numBedrooms) {
+    this.numBedrooms = numBedrooms;
+}
+  
+let myHouse = new House(5);
+console.log(myHouse instanceof House);//prints true
+
+//8.
+
+
+//9.
+
+
+//10.
