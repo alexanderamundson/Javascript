@@ -5,10 +5,17 @@ let dog = {
 };
 
 
-//2.
+//2. object properties can be accessed via dot notation as follows
+// objectName.propertyName
+console.log(dog.name);
+console.log(dog.numLegs);
+
 
 //3.
 
+
 //4.
+
+
 
 //5.
