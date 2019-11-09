@@ -24,8 +24,18 @@ dog.sayLegs();//returns the string: This dog has 4 legs.
   
 
 
-//4.
+//4. Constructors are functions that create new objects. 
+//They define properties and behaviors that will belong to the new object
 
+/*
+Create a constructor, Dog, with properties name, color, and numLegs that 
+are set to a string, a string, and a number, respectively.
+*/
+function Dog() {
+    this.name = "Rusty";
+    this.color = "Golden";
+    this.numLegs = 4;
+}
 
 
 //5.
