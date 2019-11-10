@@ -110,8 +110,27 @@ let beagle = new Dog("Snoopy");
   
 
 
-//10.
-
+//10. how to loop through an object's properties
+//and determine if it is an 'own' or 'prototype' property
+function Dog(name) {
+    this.name = name;
+}
+  
+  Dog.prototype.numLegs = 4;
+  
+  let beagle = new Dog("Snoopy");
+  
+  let ownProps = [];
+  let prototypeProps = [];
+  
+for (let prop in beagle) {
+    if (beagle.hasOwnProperty(prop)) {//hasOwnProperty() returns true if prop is an 'own' property and returns false otherwise
+      ownProps.push(prop);
+    }
+    else {
+      prototypeProps.push(prop);
+    }
+}
 
 //11.
 
