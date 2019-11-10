@@ -84,18 +84,48 @@ console.log(myHouse instanceof House);//prints true
 function Bird(name) {
     this.name = name;
     this.numLegs = 2;
-  }
+}
   
-  let canary = new Bird("Tweety");
-  let ownProps = [];
+let canary = new Bird("Tweety");
+let ownProps = [];
   
-  for (let property in canary) {
+for (let property in canary) {
       ownProps.push(property);
-  }
-  console.log(ownProps);//prints ["name", "numLegs"]
+}
+console.log(ownProps);//prints ["name", "numLegs"]
   
 
-//9.
+//9. Prototype Properties
+/*
+Prototype is an object that is shared among ALL instances of the object.
+think of a prototype as a "recipe" for creating objects.
+*/
+
+function Dog(name) {
+    this.name = name;
+}
+Dog.prototype.numLegs= 4;
+let beagle = new Dog("Snoopy");
+  
+  
 
 
 //10.
+
+
+//11.
+
+
+//12.
+
+
+//13.
+
+
+//14.
+
+
+
+//15.
+
+
