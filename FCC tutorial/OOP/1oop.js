@@ -209,5 +209,39 @@ console.log(Dog.prototype.isPrototypeOf(beagle));//prints 'true'
 
 
 //15.
+/*
+Object.create(obj) creates a new object, and sets obj as the new object's prototype
+*/
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+let duck = Object.create(Animal.prototype);
+let beagle = Object.create(Animal.prototype);
+
+duck.eat(); // Should print "nom nom nom"
+beagle.eat(); // Should print "nom nom nom"
 
 
+//17.
+
+
+//18.
+
+
+//19.
+
+
+//20.
+
+
+
+//21.
+
+
+
+//22.
