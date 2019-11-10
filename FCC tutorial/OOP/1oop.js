@@ -193,7 +193,19 @@ Dog.prototype = {
   
 
 //14.
+/*An object inherits its prototype directly from the constructor function that created it.
+You can show the prototype inheritance relationship with the 'isPrototypeOf' method
+*/
 
+function Dog(name) {
+    this.name = name;
+}
+ 
+let beagle = new Dog("Snoopy");
+  
+console.log(Dog.prototype.isPrototypeOf(beagle));//prints 'true'
+//beagle inherit its prototype from Dog
+//Dog is the prototype of beagle
 
 
 //15.
