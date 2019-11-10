@@ -228,6 +228,28 @@ beagle.eat(); // Should print "nom nom nom"
 
 
 //17.
+/*To use prototypal inheritance,set the prototype of the subtype (or child) to be an instance of the supertype object
+*/
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+//In this example, Dog is a subtype that inherits from 
+//the Animal supertype
+let beagle = new Dog();
+beagle.eat();  // Should print "nom nom nom" because
+//beagle is a Dog and Dogs inherit all properties and methods
+//of their supertype - Animal
+
 
 
 //18.
