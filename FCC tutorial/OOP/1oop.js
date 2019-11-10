@@ -168,10 +168,29 @@ Dog.prototype = {
       console.log(`My name is ${this.name}.`);
     }
 };
+//Warning!
+//manually setting the prototype to a new object erases the constructor property!
   
 
 //13.
-
+/*
+To keep the constructor property after manually creating a prototype object,
+remember to define the constructor property in the prototype object as follows:
+*/
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype = {
+  constructor: Dog,//manually adding constructor property back inside of prototype object
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+  
 
 //14.
 
