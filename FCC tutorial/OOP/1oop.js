@@ -132,8 +132,16 @@ for (let prop in beagle) {
     }
 }
 
-//11.
 
+
+//11. .constructor property return what kind of object it is
+/*
+the constructor property is a reference to the constructor function that created the instance. 
+The advantage of the constructor property is that it's possible to check for this property
+to find out what kind of object it is
+The constructor property can be overwritten, hence it’s better to use
+the 'instanceof' method to check the type of an object.
+*/
 
 //12.
 
