@@ -142,9 +142,33 @@ to find out what kind of object it is
 The constructor property can be overwritten, hence it’s better to use
 the 'instanceof' method to check the type of an object.
 */
+function Dog(name) {
+    this.name = name;
+}
+function joinDogFraternity(candidate) {
+  return candidate.constructor === Dog ? true : false;
+}// if 'candidate' is an instance of the Dog object, return true, else return false
+
+
 
 //12.
-
+/*An efficient way to declare prototype properties
+is to set the prototype to a new object that already contains the properties. 
+This way, the properties are added all at once as follows: */
+function Dog(name) {
+    this.name = name;
+}
+  
+Dog.prototype = {
+    numLegs: 4,
+    eat: function() {
+      console.log("eating...");
+    },
+    describe: function() {
+      console.log(`My name is ${this.name}.`);
+    }
+};
+  
 
 //13.
 
