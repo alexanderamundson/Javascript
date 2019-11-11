@@ -252,7 +252,21 @@ beagle.eat();  // Should print "nom nom nom" because
 
 
 
-//18.
+//18. When an object inherits its prototype from another object, 
+//it also inherits the supertype's constructor property
+/*We can manually set a child's constructor back to its own, rather than its parent's */
+function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);//at this point Bird's constructor is actually Animal
+Dog.prototype = Object.create(Animal.prototype);//at this point Dog's constructor is actually Animal
+
+Dog.prototype.constructor = Dog;//Change Dog's constructor back to Dog instead of its parent, Animal
+Bird.prototype.constructor = Bird
+
+let duck = new Bird();
+let beagle = new Dog();
 
 
 //19.
