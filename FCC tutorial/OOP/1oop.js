@@ -269,7 +269,30 @@ let duck = new Bird();
 let beagle = new Dog();
 
 
-//19.
+//19. A constructor function that inherits its prototype object from a supertype
+//constructor function can still have its own methods in addition to inherited methods
+/*
+In addition to what is inherited from its parent, you want to add behavior that is 
+unique to subtype. In this example, we will add a bark() function to Dog's prototype.
+*/
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+let animal1 = Object.create(Animal.prototype);
+Dog.prototype = Object.create(animal1);//Dog inherits Animals prototype methods
+Dog.prototype.constructor = Dog;//reset Dog's constructor from Animal to Dog
+
+//Functions are added to a subclass's prototype the same 
+//way as any constructor function
+Dog.prototype.bark = function() {
+    console.log("Woof!");
+};//Added a new function to Dog prototype. Now Dogs can eat() and bark()
+
+let beagle = new Dog();
+beagle.eat(); // Should print "nom nom nom"
+beagle.bark(); // Should print "Woof!"
 
 
 //20.
