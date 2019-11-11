@@ -295,8 +295,23 @@ beagle.eat(); // Should print "nom nom nom"
 beagle.bark(); // Should print "Woof!"
 
 
-//20.
+//20. It's possible to override an inherited method.
+//It's done the same way as adding a prototype function 
+//- by adding a method to ChildObject.prototype using the same method name
+//as the one to override.
+function Bird() { }
 
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+Penguin.prototype.fly = () =>  "Alas, this is a flightless bird.";
+//The above line makes Penguin override the Bird's fly() function
+
+let penguin = new Penguin();
+console.log(penguin.fly());//prints: Alas, this is a flightless bird.
 
 
 //21.
