@@ -314,8 +314,29 @@ let penguin = new Penguin();
 console.log(penguin.fly());//prints: Alas, this is a flightless bird.
 
 
-//21.
+//21. A mixin allows other objects to use a collection of functions.
+/*Note how the mixin allows for the same fly method to be reused by 
+unrelated objects bird and boat. The objects do not have an inheritance relationship 
+*/
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
 
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log("I'm Gliding!");
+  };
+};
+
+glideMixin(boat);
+boat.glide();
+glideMixin(bird);
+bird.glide();//both bird and boat can call glide()
 
 
 //22.
