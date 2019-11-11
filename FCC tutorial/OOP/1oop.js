@@ -354,3 +354,11 @@ function Bird() {
     return weight;//this method can return the value of weight 
   }
 }
+
+
+//23. IIFEs are functions that are invoked imediately when they are reached in code
+(function() {
+  console.log("this function is imediately invoked");
+})();
+//To create an IIFE, wrap a function inside parenthesis followed by two more
+//parenthesis and a semicolon
