@@ -186,3 +186,17 @@ let lastRegex = /caboose$/;
 let result = lastRegex.test(caboose);
 
 
+//18.
+/*
+the regex [A-Za-z0-9_] matches all letters, numbers, or an underscore.
+this common pattern has a shortcut:   \w 
+This character class matches upper and lowercase letters plus numbers.
+
+Use the shorthand character class \w to count the number of 
+alphanumeric characters in various quotes and strings
+*/
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g;
+let result = quoteSample.match(alphabetRegexV2).length;///length shows the total number of
+//digits that match the regex
+
