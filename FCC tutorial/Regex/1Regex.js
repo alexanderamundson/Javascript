@@ -173,9 +173,16 @@ let rickyAndCal = "Cal and Ricky both like racing.";
 let calRegex = /^Cal/; //looks for Cal at the BEGINNING of the string
 let result = calRegex.test(rickyAndCal);// returns true
 //if the string was  "This string does not start with Cal", then the test would return false
+//because Cal is not at the beginning of the string
+
 
 //17.
 /*
+You can search the end of strings using the dollar 
+sign character $ at the end of the regex.
 */
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; 
+let result = lastRegex.test(caboose);
 
 
