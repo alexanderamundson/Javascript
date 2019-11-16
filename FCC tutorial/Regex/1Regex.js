@@ -164,3 +164,18 @@ let reCriminals = /C+/;
 let matchedCriminals = crowd.match(reCriminals);
 console.log(matchedCriminals);//displays ["CCC"]
 
+
+//16.
+/*Using the carrot character, '^' OUTSIDE of a character set,
+looks to match following characters at the BEGINNING of the string
+*/
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; //looks for Cal at the BEGINNING of the string
+let result = calRegex.test(rickyAndCal);// returns true
+//if the string was  "This string does not start with Cal", then the test would return false
+
+//17.
+/*
+*/
+
+
