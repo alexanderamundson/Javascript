@@ -153,3 +153,14 @@ let text = "<h1>Winter is coming</h1>";
 let myRegex = /<h.>/; 
 let result = text.match(myRegex);
 
+//15.
+/*
+Write a greedy regex that finds one or more criminals within a group of other people. 
+A criminal is represented by the capital letter C
+Using the '+' character after a letter or digit, looks for 1 or more occurence of that letter or digit.
+*/
+let crowd = 'P1P2P3P4P5P6CCCP7P8P9';
+let reCriminals = /C+/; 
+let matchedCriminals = crowd.match(reCriminals);
+console.log(matchedCriminals);//displays ["CCC"]
+
