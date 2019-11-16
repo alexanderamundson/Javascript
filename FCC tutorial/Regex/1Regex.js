@@ -142,3 +142,14 @@ let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
 let chewieRegex = /Aaa*/i; 
 let result = chewieQuote.match(chewieRegex);
 console.log(result);//displays Aaaaaaaaaaaaaaa
+
+
+//14.
+/*
+Return the HTML tag <h1> and not the text "<h1>Winter is coming</h1>".
+Recall that the wildcard . in a regular expression matches any character.
+*/
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<h.>/; 
+let result = text.match(myRegex);
+
