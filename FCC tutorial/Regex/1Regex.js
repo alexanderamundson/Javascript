@@ -1,3 +1,4 @@
+
 //1.
 /*
 JavaScript has multiple ways to use regexes. One way to test a regex 
@@ -104,7 +105,7 @@ let result = quoteSample.match(alphabetRegex);
 //10.
 /*
 Create a single regex that matches a range of letters
- between h and s, and a range of numbers between 2and 6. 
+between h and s, and a range of numbers between 2 and 6. 
 */
 let quoteSample = "Blueberry 3.141592653s are delicious.";
 let myRegex = /[h-s2-6]/ig; 
@@ -156,8 +157,7 @@ let result = text.match(myRegex);
 //15.
 /*
 Write a greedy regex that finds one or more criminals within a group of other people. 
-A criminal is represented by the capital letter C
-Using the '+' character after a letter or digit, looks for 1 or more occurence of that letter or digit.
+A criminal is represented by the capital letter C.
 */
 let crowd = 'P1P2P3P4P5P6CCCP7P8P9';
 let reCriminals = /C+/; 
@@ -190,7 +190,7 @@ let result = lastRegex.test(caboose);
 /*
 the regex [A-Za-z0-9_] matches all letters, numbers, or an underscore.
 this common pattern has a shortcut:   \w 
-This character class matches upper and lowercase letters plus numbers.
+This character class matches all letters, numbers, and underscores.
 
 Use the shorthand character class \w to count the number of 
 alphanumeric characters in various quotes and strings
@@ -203,11 +203,12 @@ let result = quoteSample.match(alphabetRegexV2).length;///length shows the total
 
 //19.
 /*   \W is shorthand that works the opposite way of \w:
-    \W IS used for matching all NON-alphanumeric characters.
+    \W is used for matching all NON-alphanumeric characters.
  */
 let quoteSample = "The five boxing wizards jump quickly.";
 let nonAlphabetRegex = /\W/g; 
 let result = quoteSample.match(nonAlphabetRegex).length;
+//console.log(result);//displays 6
 
 
 //20.
