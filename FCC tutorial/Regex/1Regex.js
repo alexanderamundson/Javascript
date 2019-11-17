@@ -209,3 +209,12 @@ let quoteSample = "The five boxing wizards jump quickly.";
 let nonAlphabetRegex = /\W/g; 
 let result = quoteSample.match(nonAlphabetRegex).length;
 
+
+//20.
+/*  \d is shorthand for [0-9]: it matches all numeric digits
+*/
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g;//same as /[0-9]/g
+let result = movieName.match(numRegex).length;//result is 4
+
+
