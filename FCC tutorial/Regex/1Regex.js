@@ -226,3 +226,16 @@ let result = movieName.match(numRegex).length;//result is 4
 let movieName = "2001: A Space Odyssey";
 let noNumRegex = /\D/g; 
 let result = movieName.match(noNumRegex).length;//result is 17
+
+
+//22.
+/*
+Write regex to match the following:
+1) Usernames can only use alpha-numeric characters.
+2) The only numbers in the username have to be at the end. There can be zero or more of them at the end.
+3) Username letters can be lowercase and uppercase.
+4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+*/
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z](([0-9][0-9]+)|[a-z]+[0-9]*)$/i; 
+let result = userCheck.test(username);
