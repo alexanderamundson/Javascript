@@ -219,3 +219,10 @@ let numRegex = /\d/g;//same as /[0-9]/g
 let result = movieName.match(numRegex).length;//result is 4
 
 
+//21.
+/*
+\D is the opposite of \d : it matches all NON-numeric digits
+*/
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; 
+let result = movieName.match(noNumRegex).length;//result is 17
