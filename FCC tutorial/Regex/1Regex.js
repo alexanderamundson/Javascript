@@ -200,3 +200,12 @@ let alphabetRegexV2 = /\w/g;
 let result = quoteSample.match(alphabetRegexV2).length;///length shows the total number of
 //digits that match the regex
 
+
+//19.
+/*   \W is shorthand that works the opposite way of \w:
+    \W IS used for matching all NON-alphanumeric characters.
+ */
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; 
+let result = quoteSample.match(nonAlphabetRegex).length;
+
