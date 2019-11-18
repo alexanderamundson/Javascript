@@ -255,3 +255,16 @@ let result = sample.match(countWhiteSpace);// Returns [" ", " "," ", " "," "]
 let sample = "Whitespace is important in separating words";
 let countNonWhiteSpace = /\S/g;
 let result = sample.match(countNonWhiteSpace);
+
+
+//25.
+/*You can specify the lower and upper number of patterns with quantity specifiers.
+ Quantity specifiers are used with curly brackets ({ and }).
+*/
+let ohStr = "Ohhh no";
+
+//this regex matches the phrase "Oh no" only when it has 3 to 6 letter h's.
+let ohRegex = /Oh{3,6} no/; 
+
+let result = ohRegex.test(ohStr);//returns true
+result = ohRegex.test("Ohhhhhh no");// also returns true
