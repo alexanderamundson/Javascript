@@ -279,3 +279,13 @@ result = ohRegex.test("Ohhhhhh no");// also returns true
 let haStr = "Hazzzzah";
 let haRegex = /Haz{4,}ah/;
 let result = haRegex.test(haStr);
+
+
+//27 quantity specifers for a specific number of matches, not a range
+/*
+To specify a certain number of patterns, 
+just have that one number between the curly brackets.
+*/
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}er/;
+let result = timRegex.test(timStr);
