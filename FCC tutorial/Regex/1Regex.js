@@ -239,3 +239,11 @@ Write regex to match the following:
 let username = "JackOfAllTrades";
 let userCheck = /^[a-z](([0-9][0-9]+)|[a-z]+[0-9]*)$/i; 
 let result = userCheck.test(username);
+
+
+//23.
+/*You can search for whitespace using \s
+*/
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g;
+let result = sample.match(countWhiteSpace);// Returns [" ", " "," ", " "," "]
