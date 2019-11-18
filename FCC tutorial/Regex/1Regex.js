@@ -287,5 +287,16 @@ To specify a certain number of patterns,
 just have that one number between the curly brackets.
 */
 let timStr = "Timmmmber";
-let timRegex = /Tim{4}er/;
+let timRegex = /Tim{4}ber/;
 let result = timRegex.test(timStr);
+
+
+//28.
+/*
+using ? after a character indicates that the character is optional.
+The regex will match if the character is present or not.
+*/
+let favWord = "favorite";
+let favRegex = /favou?rite/; 
+let result = favRegex.test(favWord);
+//This matches both favorite and favourite
