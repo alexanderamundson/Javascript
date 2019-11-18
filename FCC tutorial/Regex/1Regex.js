@@ -268,3 +268,14 @@ let ohRegex = /Oh{3,6} no/;
 
 let result = ohRegex.test(ohStr);//returns true
 result = ohRegex.test("Ohhhhhh no");// also returns true
+
+
+//26. The quantity specifer can does not require an upper limit
+/* If the upper bound number of a quantity specifcer is ommited,
+   it will match an pattern that is at least the lower number.
+   To use quantity specifer with no upper bound, simply write
+   the lower bound number follow by a comma:  {lowerBound#,}
+*/
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/;
+let result = haRegex.test(haStr);
