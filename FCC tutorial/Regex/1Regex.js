@@ -247,3 +247,11 @@ let result = userCheck.test(username);
 let sample = "Whitespace is important in separating words";
 let countWhiteSpace = /\s/g;
 let result = sample.match(countWhiteSpace);// Returns [" ", " "," ", " "," "]
+
+
+//24.
+/*You can search for whitespace using \S
+*/
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g;
+let result = sample.match(countNonWhiteSpace);
