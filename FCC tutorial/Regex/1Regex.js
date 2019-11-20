@@ -123,10 +123,9 @@ console.log(result);//displays:  ,b,l,n,d, ,m,c,.
 
 //12.
 /*
- To match a character (or group of characters) that appears
- one or more times in a row, You can use the "+" character 
+To match a character (or group of characters) that appears
+one or more times in a row, You can use the "+" character 
 */
-
 let difficultSpelling = "Mississippi";
 let myRegex = /s+/g; 
 let result = difficultSpelling.match(myRegex);
@@ -152,7 +151,7 @@ Recall that the wildcard . in a regular expression matches any character.
 */
 let text = "<h1>Winter is coming</h1>";
 let myRegex = /<h.>/; 
-let result = text.match(myRegex);
+let result = text.match(myRegex);//result is <h1>
 
 //15.
 /*
@@ -202,17 +201,17 @@ let result = quoteSample.match(alphabetRegexV2).length;///length shows the total
 
 
 //19.
-/*   \W is shorthand that works the opposite way of \w:
-    \W is used for matching all NON-alphanumeric characters.
+/* \W is shorthand that works the opposite way of \w:
+   \W is used for matching all NON-alphanumeric characters.
  */
 let quoteSample = "The five boxing wizards jump quickly.";
 let nonAlphabetRegex = /\W/g; 
 let result = quoteSample.match(nonAlphabetRegex).length;
-//console.log(result);//displays 6
+//console.log(result);//displays 6 (5 spaces, 1 period)
 
 
 //20.
-/*  \d is shorthand for [0-9]: it matches all numeric digits
+/* \d is shorthand for [0-9]: it matches all numeric digits
 */
 let movieName = "2001: A Space Odyssey";
 let numRegex = /\d/g;//same as /[0-9]/g
@@ -246,11 +245,11 @@ let result = userCheck.test(username);
 */
 let sample = "Whitespace is important in separating words";
 let countWhiteSpace = /\s/g;
-let result = sample.match(countWhiteSpace);// Returns [" ", " "," ", " "," "]
+let result = sample.match(countWhiteSpace);// Returns [" "," "," "," "," "]
 
 
 //24.
-/*You can search for whitespace using \S
+/*You can search for NON-whitespace using \S
 */
 let sample = "Whitespace is important in separating words";
 let countNonWhiteSpace = /\S/g;
@@ -259,7 +258,7 @@ let result = sample.match(countNonWhiteSpace);
 
 //25.
 /*You can specify the lower and upper number of patterns with quantity specifiers.
- Quantity specifiers are used with curly brackets ({ and }).
+  Quantity specifiers are used with curly brackets ({ and }).
 */
 let ohStr = "Ohhh no";
 
@@ -268,9 +267,10 @@ let ohRegex = /Oh{3,6} no/;
 
 let result = ohRegex.test(ohStr);//returns true
 result = ohRegex.test("Ohhhhhh no");// also returns true
+result = ohRegex.test("Ohhhhhhhhhhhhhh no");// returns false, string has > 6 "h's"
 
 
-//26. The quantity specifer can does not require an upper limit
+//26. The quantity specifer does not require an upper limit
 /* If the upper bound number of a quantity specifcer is ommited,
    it will match an pattern that is at least the lower number.
    To use quantity specifer with no upper bound, simply write
@@ -278,7 +278,8 @@ result = ohRegex.test("Ohhhhhh no");// also returns true
 */
 let haStr = "Hazzzzah";
 let haRegex = /Haz{4,}ah/;
-let result = haRegex.test(haStr);
+let result = haRegex.test(haStr);//result is true
+result = hasRegex.test("Hazah");//result is false, string has < 3 "z's"
 
 
 //27 quantity specifers for a specific number of matches, not a range
@@ -288,7 +289,7 @@ just have that one number between the curly brackets.
 */
 let timStr = "Timmmmber";
 let timRegex = /Tim{4}ber/;
-let result = timRegex.test(timStr);
+let result = timRegex.test(timStr);//result is true
 
 
 //28.
@@ -300,3 +301,18 @@ let favWord = "favorite";
 let favRegex = /favou?rite/; 
 let result = favRegex.test(favWord);
 //This matches both favorite and favourite
+
+
+//29. lookaheads
+/*Use lookaheads in the pwRegex to match passwords that:
+ are greater than 5 characters long, 
+ do not begin with numbers, 
+ and have two consecutive digits.
+*/
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6,})(?=\D+\d{2,})/; 
+"banan1".match(pwRegex);//should not match "banan1"
+"bana12".match(pwRegex);//should match "bana12"
+"abc123".match(pwRegex);//should match
+"1234".match(pwRegex);//should NOT match
+
