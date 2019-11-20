@@ -324,3 +324,29 @@ in a case sensitive manner. It should also allow for middle names.
 let myString = "Eleanor Roosevelt";
 let myRegex = /(Franklin|Eleanor).+Roosevelt/; 
 let result = myRegex.test(myString); 
+
+
+//31.
+/*
+You can search for repeat substrings using capture groups.
+Parentheses, ( and ), are used to find repeat substrings. 
+You put the regex of the pattern that will repeat in between the parentheses.
+Using the .match() method on a string will return an array
+with the string it matches, along with its capture group.
+*/
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/;
+//using ^ and $ ensures that it only matches an 
+//exact match - 3 numbers sepeated by spaces.
+//Without these, the regex would also match 4 or more numbers seperated by spaces 
+let result = reRegex.test(repeatNum);
+/*
+Your regex should match "42 42 42".
+Your regex should match "100 100 100".
+Your regex should not match "42 42 42 42".
+Your regex should not match "42 42".
+Your regex should not match "101 102 103".
+*/
+
+
+//32.
