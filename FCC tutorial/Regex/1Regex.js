@@ -360,3 +360,13 @@ let fixRegex = /good/;
 let replaceText = "okey-dokey"; 
 let result = huhText.replace(fixRegex, replaceText);
 
+
+//33.
+/*
+Using the following regex in a replace method as follows,
+works the same as the String.prototype.trim() method.
+It removes whitespace from the beginning and end of a string.
+*/
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g;
+let result = hello.replace(wsRegex, ''); 
