@@ -316,3 +316,11 @@ let pwRegex = /(?=\w{6,})(?=\D+\d{2,})/;
 "abc123".match(pwRegex);//should match
 "1234".match(pwRegex);//should NOT match
 
+
+//30.
+/*Create a regex that matches the names of Franklin Roosevelt or Eleanor Roosevelt
+in a case sensitive manner. It should also allow for middle names.
+*/
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin|Eleanor).+Roosevelt/; 
+let result = myRegex.test(myString); 
