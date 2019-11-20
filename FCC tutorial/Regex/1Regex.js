@@ -350,3 +350,13 @@ Your regex should not match "101 102 103".
 
 
 //32.
+/*the string.prototype.replace() method
+takes two arguments: a regex and a replacement substring.
+Calling replace() on a string replaces substrings that match 
+the regex with the replacement string 
+*/
+let huhText = "This sandwich is good.";
+let fixRegex = /good/; 
+let replaceText = "okey-dokey"; 
+let result = huhText.replace(fixRegex, replaceText);
+
