@@ -23,7 +23,7 @@ function checkCashRegister(price, cash, cid) {
    0.10: 0,
    0.05: 0,
    0.01: 0
-  };
+ };
   
   var registerCount = {
   100:  cid[8][1] / 100,
@@ -42,7 +42,10 @@ function checkCashRegister(price, cash, cid) {
   console.log(changeDue + " - change due");
   let i = 0;
   while (changeDue > 0.00) {
-    if (vals[i] == changeDue) {
+    if (i > 8 ) {
+      return {status: "INSUFFICIENT_FUNDS", change: []};
+    }
+    if (vals[i] === changeDue) {
       if (denominationIsInRegister(vals[i])) {
         decrementRegisterDenominationCount(vals[i]);
         incrementChangeDenominationCount(vals[i] );
@@ -60,14 +63,19 @@ function checkCashRegister(price, cash, cid) {
         i++;
       }
     } else if (vals[i] > changeDue) {
-      i++;
+       i++;
 
-    } else {console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!THis shldnt appear EVER");
+    } else {  console.log(vals[i] + "> " +  changeDue + 
+        " was the BREAKING FACTOR***************" + i);
     }
     //console.log("the denom counts are:-----------");
-  }
-    console.log(changeCount);
-    return {status: "OPEN", change: []};
+    
+    }
+
+    
+    change = createChange(changeCount);
+    
+    return {status: "OPEN", change: change};
   }
 
 
@@ -91,5 +99,26 @@ function checkCashRegister(price, cash, cid) {
     return cashInDrawer.map((denomination) => denomination[1]).reduce((a,b) => a+b, 0 );
   }
 
+
+  function createChange(changeCount) {
+    cid = cid.reverse();
+    console.log(changeCount);
+    var changeAmounts = cid.map(mapToChangeValues).filter(filterUnusedDenomination);//filterUsedDenominations(cid); 
+    return changeAmounts;
+  }
+
+  function mapToChangeValues(cidElement, index) {
+    const denomValues = [100, 20, 10, 5, 1, 0.25, 0.10, 0.05, 0.01];
+    return [cidElement[0], (changeCount[denomValues[index]] * denomValues[index]) ];
+
+  }
+
+  function filterUnusedDenomination(cidElement) {
+    console.log(cidElement[1] !== 0);
+    return cidElement[1] !== 0;
+  }
+
 }
-checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])
+
+
+checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);// should return {status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}
