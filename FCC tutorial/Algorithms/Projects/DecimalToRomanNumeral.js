@@ -7,17 +7,49 @@ function convertToRoman(num) {
      [10,   "X", 3],    [9,    "IX", 1],    [5,    "V", 1],    [4,    "IV", 1],
      [1,    "I", 3]
     ]
-     
-    var stop = false;
-    while (decimal > 0 || stop) {
-       if (isExactMatch(decimal)) {
-         return getExactRomanMatch(decimal);
-       } else {
-         stop =  true;
-         return "I";
-       }
+    
+    //check if 'num' matches single value in 'values' array
+    if ( isExactMatch(decimal) ? true : false) {
+        return getExactRomanMatch(decimal);
     }
- 
+    var stop = false;
+    var counter = 0;
+    var consecutiveMax;
+    var output = "";
+    while (counter < values.length || stop) {
+        if (values[counter][0] > decimal) {
+            counter++;
+            continue;
+        }
+        else if (values[counter][0] <= decimal) {
+            //stores the maximum times the roman numeral digit can appear consecutive
+            //e.g. I can appear 1 - 3 times consecutively (I, II, III), but V is never repeated in roman numerals
+            consecutiveMax = values[counter][2];
+
+            //Store current value
+            let value = values[counter][0];
+
+            //loop from variable down to 1 (decrement0 variable) 
+            //[while consecMax >= 1 && var # of x's !== 2{y} ]
+            while (consecutiveMax >= 1)  {
+                //found Matching amount of values
+                if (consecutiveMax * value === decimal) {
+                    output += getRoman(consecutiveMax, values[counter][1]);
+                    return output;/////maybe check if decimal is 0 after decrement
+                }
+                else if (consecutiveMax * value < decimal) {
+                     output += getRoman(consecutiveMax, values[counter][1]);
+                     counter++;
+                     decimal -= (consecutiveMax * value);
+                } else {
+                    consecutiveMax--;
+                }
+            }
+        } 
+    }
+
+   //returns roman numerals that exactly match
+   //a value in the values array (e.g:  I,  V, X, etc..)
    function getExactRomanMatch(decimal) {
      var romanNumeral;
      values.forEach((val, index) => {
@@ -36,104 +68,14 @@ function convertToRoman(num) {
      });
      return exactMatch;
     }
-   return num;
+    //returns 'numberOfCopies' copies of 'romanDigit'
+    function getRoman(numberOfCopies, romanDigit) {
+        let romanNumeralSequence = "";
+        console.log("getCorrectAmountCharacters" + numberOfCopies);
+        for (let i = 0; i < numberOfCopies; i++) {
+            romanNumeralSequence += romanDigit; 
+        }
+        return romanNumeralSequence;    
+    }
+
   }
- 
- 
-  console.log(
-  convertToRoman(1)
-  );
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  /*
-  console.log("90"+
-   convertToRoman(90)
-   );
-   
-  console.log("9"+
-   convertToRoman(9)
-   );
-   
-  console.log("500"+
-   convertToRoman(500)
-   );
-  
-   console.log("50"+
-     convertToRoman(50)
-     );
-  
-     
-     console.log("5"+
-       convertToRoman(5)
-       );
- 
-       console.log("400"+
-         convertToRoman(400)
-         );
-        
-         console.log("40"+
-           convertToRoman(40)
-           );
-        
-           
-           console.log("4"+
-             convertToRoman(4)
-             );
-  */    
- 
- /**
-  *     [1000, "M", 3],    [900,  "CM", 1],    [500,  "D", 1],    [400,  "CD", 1],
-     [100,  "C", 3],    [90,   "XC", 1],    [50,  "L", 1],     [40,   "XL", 1],
-     [10,   "X", 3],    [9,    "IX", 1],    [5,    "V", 1],    [4,    "IV", 1],
-     [1,    "I", 3]
-  */
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- /*
- var values = {
-   1000: "M",
-   900:  "CM",
-   500:  "D",
-   400:  "CD",
-   100:  "C",
-   90:   "XC",
-   50:   "L",
-   40:   "XL",
-   10:   "X",
-   9:    "IX",
-   5:    "V",
-   4:    "IV",
-   1:    "I"
- }
- 
- 
-  var table = [{type:"thousand", val: 1000},{type:"fivHundreds", val: 500},{type:"hundreds", val: 100},
-                 {type:"fifty", val: 1000},{type:"thousand", val: 1000},{type:"thousand", val: 1000},
-                 {type:"thousand", val: 1000}];
- 
- 
-                 var values = [
-     {1000: "M"},    {900:  "CM"},    {500:  "D"},    {400:  "CD"},
-     {100:  "C"},    {90:   "XC"},    {50:   "L"},    {40:   "XL"},
-     {10:   "X"},    {9:    "IX"},    {5:    "V"},    {4:    "IV"},
-     {1:    "I"}
-    ]
- */
