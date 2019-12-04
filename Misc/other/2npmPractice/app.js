@@ -10,7 +10,7 @@ for (let i = 0; i < 10; i++) {
 //
 
 
-//2) request is the simplest way possible to make http calls
+/////  2A) using ES5].  request is the simplest way possible to make http calls
 const request = require('request');
 //jsonplaceholder is a fake Online REST API for Testing and Prototyping
 request('https://jsonplaceholder.typicode.com/todos', function (error, response, body) {
@@ -18,7 +18,21 @@ request('https://jsonplaceholder.typicode.com/todos', function (error, response,
  // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
  // console.log('body:', body); // Print the HTMLs for given page
  if (!error && response.statusCode == 200) {
-     const parsedData = JSON.parse(body);//parses body to JSON
+     let parsedData = JSON.parse(body);//parses body to JSON
      console.log(parsedData[5].title);
  }
 });
+
+/////  2B) same as above 2A but using ES6 promises.
+const rp = require('request-promise');
+rp('https://jsonplaceholder.typicode.com/users/1')
+    .then( (body) => {
+        let parsedData = JSON.parse(body);
+        console.log(`${parsedData.name}'s phone # is ${parsedData.phone}.`);
+    })
+    .catch( (error) => {
+        console.log("ERROR! " + error);
+
+    })
+
+
